@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="cleaning code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Continue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Wolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ClientProg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ClientProg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PkDICQvQUjbCPu2VrxgPHHKE34" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    &quot;last_opened_file_path&quot;: &quot;D:/IdeaProjects/XouDouQi/src/main/java/com/ensah/network&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Microsoft/Desktop/01/java/XouDouQi/src/main/java/com/ensah/network&quot;,
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/master
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\network" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\shadow" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
+      <recent name="C:\Users\Microsoft\Desktop\01\java\XouDouQi\src\main\java\com\ensah\network" />
+      <recent name="C:\Users\Microsoft\Desktop\01\java\XouDouQi\src\main\java\com\ensah\media" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\media" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\menu" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\continue" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\rules" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="640a03fa-baf7-48f2-9f9d-cb8f5a0655c8" name="Changes" comment="" />
+      <created>1683992107560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683992107560</updated>
+      <workItem from="1683994937168" duration="317000" />
+      <workItem from="1685135633367" duration="9035000" />
+      <workItem from="1685271491271" duration="8899000" />
+      <workItem from="1685299155189" duration="2612000" />
+      <workItem from="1685351988719" duration="12671000" />
+      <workItem from="1685376683531" duration="1120000" />
+      <workItem from="1685383681150" duration="3384000" />
+      <workItem from="1685442874441" duration="67000" />
+      <workItem from="1685443439023" duration="290000" />
+      <workItem from="1685445865264" duration="3454000" />
+      <workItem from="1685533963407" duration="7613000" />
+      <workItem from="1685622045873" duration="432000" />
+      <workItem from="1685659058393" duration="317000" />
+      <workItem from="1685698669631" duration="606000" />
+      <workItem from="1685775538392" duration="5663000" />
+    </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1684270851869</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684270851869</updated>
+    </task>
+    <task id="LOCAL-00002" summary="now">
+      <created>1684271129915</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684271129915</updated>
+    </task>
+    <task id="LOCAL-00003" summary="now">
+      <created>1684272657889</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684272657889</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added animals to board">
+      <created>1684276145789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684276145789</updated>
+    </task>
+    <task id="LOCAL-00005" summary="moving animals">
+      <created>1684364574145</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684364574145</updated>
+    </task>
+    <task id="LOCAL-00006" summary="moving animals">
+      <created>1684511728116</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684511728116</updated>
+    </task>
+    <task id="LOCAL-00007" summary="moving animals">
+      <created>1684516814950</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684516814950</updated>
+    </task>
+    <task id="LOCAL-00008" summary="moving animals">
+      <created>1684699269767</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684699269767</updated>
+    </task>
+    <task id="LOCAL-00009" summary="moving animals">
+      <created>1684705290332</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684705290332</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Checking game rules">
+      <created>1684846040008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684846040008</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Checking game rules">
+      <created>1685135110577</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685135110577</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <MESSAGE value="now" />
+    <MESSAGE value="added animals to board" />
+    <MESSAGE value="moving animals" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving animals" />
+  </component>
+</project>
