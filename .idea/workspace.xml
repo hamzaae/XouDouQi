@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="cleaning code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Continue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/utils/LoadSaveBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/utils/newBoard.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Wolf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ClientProg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ClientProg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,17 +82,17 @@
       <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Microsoft\Desktop\XouDouQi\src\main\resources" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\menu" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\continue" />
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\rules" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="640a03fa-baf7-48f2-9f9d-cb8f5a0655c8" name="Changes" comment="" />
+      <changelist id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="cleaning code" />
       <created>1683992107560</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

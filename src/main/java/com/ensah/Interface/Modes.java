@@ -1,5 +1,8 @@
 package com.ensah.Interface;
 
+import com.ensah.board.BoardRandom;
+import com.ensah.board.Player;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -62,10 +65,24 @@ public class Modes extends JPanel {
 
             public void mouseClicked(MouseEvent e){
                 if (button == easyButton) {
+                    JFrame frame = new JFrame();
+                    frame.setSize( 800, 612);
+                    frame.setResizable(false);
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JPanel pan = new JPanel();
+                    pan.setBackground(Color.black);
+                    pan.setBounds(64*7,0,800-64*7,612);
+                    frame.add(pan);
+                    BoardRandom boardRandom = new BoardRandom(new Player("1",false), new Player("2", true));
+                    BoardRandom.addAnimals();
+                    frame.add(boardRandom);
+                    BoardRandom.actions(frame);
+                    frame.setVisible(true);
 
 
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(easyButton);
                     currentFrame.dispose();
+
                 }
                 if (button == mediumButton) {
                     System.out.println("the second buttom");

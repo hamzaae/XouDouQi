@@ -2,7 +2,8 @@ package com.ensah.board;
 
 import com.ensah.animals.Animal;
 import com.ensah.animals.*;
-import com.ensah.utils.LoadSaveBoard;
+import com.ensah.board.Player;
+import com.ensah.board.Position;
 
 
 import javax.imageio.ImageIO;
@@ -13,59 +14,52 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 
-public class BoardGUI extends JPanel{
+public class BoardRandom extends JPanel{
     public static ArrayList<Animal> animals = new ArrayList<>();
     public static Animal selectedAnimal;
     public static Player player1;
     public static Player player2;
     private static ArrayList<Position> possibleMoves = new ArrayList<>();
+    static Random random = new Random();
 
 
 
 
-    public BoardGUI(Player player1, Player player2){
+    public BoardRandom(Player player1, Player player2){
         this.setPreferredSize(new Dimension(7*64,9*64));
-        BoardGUI.player1 = player1;
-        BoardGUI.player2 = player2;
+        BoardRandom.player1 = player1;
+        BoardRandom.player2 = player2;
 
     }
 
 
     public static void addAnimals(){
-        try {
-            String [][] newBoard = LoadSaveBoard.LoadGame("C:\\Users\\Microsoft\\Desktop\\XouDouQi\\src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
-            for (int i=0;i<9;i++){
-                for (int j=0;j<7;j++){
-                    // Player 1_left
-                    if (newBoard[i][j].equals("R")){animals.add(new Rat(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("C")){animals.add(new Cat(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("W")){animals.add(new Wolf(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("D")){animals.add(new Dog(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("P")){animals.add(new Leopard(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("T")){animals.add(new Tiger(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("L")){animals.add(new Lion(player1,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("E")){animals.add(new Elephant(player1,new Position(j,i),true));}
-                    // Player2_right
-                    if (newBoard[i][j].equals("r")){animals.add(new Rat(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("c")){animals.add(new Cat(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("w")){animals.add(new Wolf(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("d")){animals.add(new Dog(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("p")){animals.add(new Leopard(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("t")){animals.add(new Tiger(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("l")){animals.add(new Lion(player2,new Position(j,i),true));}
-                    if (newBoard[i][j].equals("e")){animals.add(new Elephant(player2,new Position(j,i),true));}
+        // Player 1_left
 
-                }
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-            // add animals init position if error
-        }
+        animals.add(new Rat(player1,new Position(0,2),true));
+        animals.add(new Cat(player1,new Position(5,1),true));
+        animals.add(new Dog(player1,new Position(1,1),true));
+        animals.add(new Wolf(player1,new Position(4,2),true));
+        animals.add(new Leopard(player1,new Position(2,2),true));
+        animals.add(new Tiger(player1,new Position(6,0),true));
+        animals.add(new Lion(player1,new Position(0,0),true));
+        animals.add(new Elephant(player1,new Position(6,2),true));
+
+        // Player2_right
+
+        animals.add(new Rat(new Position(6,6),true,player2));
+        animals.add(new Cat(new Position(1,7),true,player2));
+        animals.add(new Dog(new Position(5,7),true,player2));
+        animals.add(new Wolf(new Position(2,6),true,player2));
+        animals.add(new Leopard(new Position(4,6),true,player2));
+        animals.add(new Tiger(new Position(0,8),true,player2));
+        animals.add(new Lion(new Position(6,8),true,player2));
+        animals.add(new Elephant(new Position(0,6),true,player2));
     }
 
     public void paintComponent(Graphics g){
@@ -207,8 +201,9 @@ public class BoardGUI extends JPanel{
 
                 if (animalMoved) {
                     changePlayer();
+                    randomPlayer();
                     frame.repaint();
-
+                    changePlayer();
                 }
 
                 selectedAnimal = null;
@@ -244,6 +239,20 @@ public class BoardGUI extends JPanel{
             possibleMoves.addAll(animal.checkMovements(animal));
         }
         return possibleMoves;
+    }
+
+    public static void randomPlayer(){
+        int randomAnimalIndex = random.nextInt(animals.size());
+        while (!animals.get(randomAnimalIndex).getPlayer().getUsername().equals("1")){
+            randomAnimalIndex = random.nextInt(animals.size());
+        }
+        Animal randomAnimal = animals.get(randomAnimalIndex);
+
+        ArrayList<Position> possibleMoves = getMovedAnimalPossibleMoves(randomAnimal);
+        if (!possibleMoves.isEmpty()) {
+            int randomMoveIndex = random.nextInt(possibleMoves.size());
+            randomAnimal.move(possibleMoves.get(randomMoveIndex));
+        }
     }
 
     public static void changePlayer() {
