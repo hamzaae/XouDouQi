@@ -5,25 +5,32 @@ import com.ensah.board.BoardGUI;
 import com.ensah.board.Player;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+
+
 import static com.ensah.board.BoardGUI.actions;
 import static com.ensah.board.BoardGUI.addAnimals;
 
 public class Menu extends JPanel {
+    private  Clip clip;
+    private boolean isPlaying;
     private BufferedImage background;
     private final JButton singleButton,localButton,onlineButton;
     private final JButton soundButton,infoButton,exitButton;
 
 
     public Menu() {
+
         loadBackgroundImage();
 
         setLayout(null); // Use null layout for custom positioning of components
@@ -32,12 +39,9 @@ public class Menu extends JPanel {
         singleButton = createButton("/menu/single.png", 190, 310, 140, 50);
         localButton = createButton("/menu/local.png", 190, 370, 141, 53);
         onlineButton = createButton("/menu/online.png", 190, 430, 141, 53);
-        soundButton = createButton("/sound.png",30, 370, 32, 32);
-        infoButton =createButton("/info.png",30, 410, 32, 32);
-        exitButton =createButton("/exit.png",30, 450, 32, 32);
-
-
-
+        soundButton = createButton("/sound.png", 30, 370, 32, 32);
+        infoButton = createButton("/info.png", 30, 410, 32, 32);
+        exitButton = createButton("/exit.png", 30, 450, 32, 32);
 
 
         // Add buttons to the panel
@@ -50,6 +54,16 @@ public class Menu extends JPanel {
 
         // Set the preferred size of the panel to match the background image size
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
+        isPlaying = true;
+        try {
+            File file = new File("C:\\Users\\ADMIN\\Documents\\XouDouQi\\src\\main\\resources\\Crash.wav");
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+            clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
     }
 
     private void loadBackgroundImage() {
@@ -76,10 +90,11 @@ public class Menu extends JPanel {
 
                     JFrame frame = new JFrame("Single game ");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.getContentPane().add(new com.ensah.Interface.Continue());
+                    frame.getContentPane().add(new com.ensah.Interface.ContinueSingle());
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
+
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(singleButton);
                     currentFrame.dispose();
 
@@ -87,7 +102,18 @@ public class Menu extends JPanel {
 
                 }
                 if (button == localButton) {
+                    JFrame frame = new JFrame("Single game ");
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.getContentPane().add(new ContinueLocal());
+                    frame.pack();
+                    frame.setLocationRelativeTo(null);
+                    frame.setVisible(true);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(singleButton);
+                    currentFrame.dispose();
+
+                    /*
                     JFrame frame = new JFrame();
+
                     frame.setSize( 800, 612);
                     frame.setResizable(false);
                     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -97,12 +123,13 @@ public class Menu extends JPanel {
                     frame.add(pan);
                     BoardGUI boardGUI = new BoardGUI(new Player("1",false), new Player("2", true));
                     addAnimals();
-                    //addBoardPieces();
                     frame.add(boardGUI);
                     actions(frame);
                     frame.setVisible(true);
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(localButton);
                     currentFrame.dispose();
+
+                     */
 
                 }
                 if (button == onlineButton) {
@@ -116,8 +143,21 @@ public class Menu extends JPanel {
                     currentFrame.dispose();
                 }
                 if (button == soundButton) {
+                    if (isPlaying) {
+                        clip.stop();
 
-                }
+                        isPlaying = false;
+
+                    } else {
+                        clip.start();
+
+
+
+                        isPlaying = true;
+                    }
+
+                    }
+
                 if (button == infoButton) {
                     JFrame frame = new JFrame("Game rules");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

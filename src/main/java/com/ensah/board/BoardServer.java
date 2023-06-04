@@ -1,9 +1,4 @@
-/*package com.ensah.board;
 
-public class BoardNetwork {
-}
-
- */
 package com.ensah.board;
 
 import com.ensah.Interface.Reseau;
@@ -160,8 +155,7 @@ public class BoardServer extends JPanel{
             @Override
             public void mouseClicked(MouseEvent e) {
                 selectedAnimal = getMovedAnimal(e.getX(),e.getY());
-                //boardStatus.setBoard(getBoardCurrent());
-                //System.out.println(boardStatus.board);
+
                 frame.repaint();
             }
 
@@ -187,6 +181,7 @@ public class BoardServer extends JPanel{
                             animalMoved = true;
                             System.out.println("Animal moved successfully.");
                             possibleMoves.clear();
+                            player1.setTurn(false);
                             // Kill the Enemy's Animal Or End Game
                             for (Animal a : animals) {
                                 // Kill enemy
@@ -252,7 +247,7 @@ public class BoardServer extends JPanel{
 
     public static ArrayList<Position> getMovedAnimalPossibleMoves(Animal animal){
         possibleMoves.clear();
-        if (animal.getPlayer().getUsername().equals("1")) {
+        if (animal.getPlayer().getUsername().equals("1") && player1.isTurn()) {
             possibleMoves.addAll(animal.checkMovements(animal));
         }
         return possibleMoves;

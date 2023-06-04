@@ -10,13 +10,13 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Continue extends JPanel{
+public class ContinueSingle extends JPanel{
     private BufferedImage background;
     private final JButton newButton,ContinueButton;
     private final JButton homeButton,infoButton,exitButton;
 
 
-    public Continue() {
+    public ContinueSingle() {
 
         loadBackgroundImage();
 
@@ -63,7 +63,7 @@ public class Continue extends JPanel{
                 if (button == newButton) {
                     JFrame frame = new JFrame("Single game modes ");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.getContentPane().add(new com.ensah.Interface.Modes());
+                    frame.getContentPane().add(new Modes());
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
@@ -72,25 +72,31 @@ public class Continue extends JPanel{
                     currentFrame.dispose();
                 }
                 if (button == ContinueButton) {
-                    System.out.println("the second buttom");
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(ContinueButton);
+                    currentFrame.dispose();
 
                 }
                 if (button == homeButton) {
 
                     JFrame frame = new JFrame("Xou DOU qi");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.getContentPane().add(new com.ensah.Interface.Menu());
+                    frame.getContentPane().add(new Menu());
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(homeButton);
+                    currentFrame.dispose();
+
                 }
                 if (button == infoButton) {
                     JFrame frame = new JFrame("Game rules");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.getContentPane().add(new com.ensah.Interface.Rules());
+                    frame.getContentPane().add(new Rules());
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(infoButton);
+                    currentFrame.dispose();
                 }
                 if (button == exitButton) {
                     System.exit(0);

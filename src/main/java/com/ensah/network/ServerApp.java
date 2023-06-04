@@ -17,6 +17,7 @@ public class ServerApp {
 
 	public ServerApp() throws Exception {
 		serverSocket = new ServerSocket(port);
+
 		System.out.println("Server started");
 
 		clientSocket = serverSocket.accept();

@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.io.IOException;
 
 import static com.ensah.board.BoardServer.animals;
+import static com.ensah.board.BoardServer.player1;
 
 public class ServerTh extends Thread{
     JFrame frame;
@@ -41,6 +42,7 @@ public class ServerTh extends Thread{
                     }
 
                 }
+                player1.setTurn(true);
                 frame.repaint();
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);

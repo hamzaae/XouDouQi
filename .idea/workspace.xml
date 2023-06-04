@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="cleaning code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/utils/LoadSaveBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/utils/newBoard.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/media/ground.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Continue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueSingle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerTh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerTh.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +77,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\media" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\network" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\shadow" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
       <recent name="C:\Users\Microsoft\Desktop\01\java\XouDouQi\src\main\java\com\ensah\network" />
       <recent name="C:\Users\Microsoft\Desktop\01\java\XouDouQi\src\main\java\com\ensah\media" />
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Microsoft\Desktop\XouDouQi\src\main\resources" />
@@ -87,6 +91,9 @@
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\menu" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\continue" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ensah.Interface" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -112,6 +119,7 @@
       <workItem from="1685659058393" duration="317000" />
       <workItem from="1685698669631" duration="606000" />
       <workItem from="1685775538392" duration="5663000" />
+      <workItem from="1685807698923" duration="18630000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1684270851869</created>
