@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="cleaning code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/media/ground.png" afterDir="false" />
+    <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Continue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueSingle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerTh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerTh.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +112,7 @@
       <workItem from="1685659058393" duration="317000" />
       <workItem from="1685698669631" duration="606000" />
       <workItem from="1685775538392" duration="5663000" />
-      <workItem from="1685807698923" duration="18630000" />
+      <workItem from="1685807698923" duration="24206000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1684270851869</created>
@@ -198,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685135110577</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1685885072297</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685885072298</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,10 +216,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="now" />
     <MESSAGE value="added animals to board" />
     <MESSAGE value="moving animals" />
-    <option name="LAST_COMMIT_MESSAGE" value="moving animals" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

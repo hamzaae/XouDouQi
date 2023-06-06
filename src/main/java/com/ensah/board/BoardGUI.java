@@ -27,6 +27,7 @@ public class BoardGUI extends JPanel{
     public static Player player2;
     private static ArrayList<Position> possibleMoves = new ArrayList<>();
     private static final int carree=64;
+    public static String word="";
 
 
 
@@ -225,6 +226,7 @@ public class BoardGUI extends JPanel{
 
                 if (animalMoved) {
                     changePlayer();
+                    Display.updateText();
                     frame.repaint();
 
                 }
@@ -265,10 +267,16 @@ public class BoardGUI extends JPanel{
     }
 
     public static void changePlayer() {
+
         if (player1.isTurn()) {
+            word="turn";
+
+
             player1.setTurn(false);
             player2.setTurn(true);
         } else {
+            word="turn";
+
             player2.setTurn(false);
             player1.setTurn(true);
 
@@ -286,6 +294,5 @@ public class BoardGUI extends JPanel{
         }
         return null;
     }
-
 
 }

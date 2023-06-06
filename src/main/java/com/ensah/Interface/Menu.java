@@ -1,9 +1,5 @@
 package com.ensah.Interface;
 
-
-import com.ensah.board.BoardGUI;
-import com.ensah.board.Player;
-
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
@@ -15,11 +11,6 @@ import java.io.IOException;
 import java.util.Objects;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-
-
-import static com.ensah.board.BoardGUI.actions;
-import static com.ensah.board.BoardGUI.addAnimals;
 
 public class Menu extends JPanel {
     private  Clip clip;
@@ -33,7 +24,7 @@ public class Menu extends JPanel {
 
         loadBackgroundImage();
 
-        setLayout(null); // Use null layout for custom positioning of components
+        setLayout(null);
 
         // Create  buttons with images
         singleButton = createButton("/menu/single.png", 190, 310, 140, 50);
@@ -111,25 +102,6 @@ public class Menu extends JPanel {
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(singleButton);
                     currentFrame.dispose();
 
-                    /*
-                    JFrame frame = new JFrame();
-
-                    frame.setSize( 800, 612);
-                    frame.setResizable(false);
-                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                    JPanel pan = new JPanel();
-                    pan.setBackground(Color.black);
-                    pan.setBounds(64*7,0,800-64*7,612);
-                    frame.add(pan);
-                    BoardGUI boardGUI = new BoardGUI(new Player("1",false), new Player("2", true));
-                    addAnimals();
-                    frame.add(boardGUI);
-                    actions(frame);
-                    frame.setVisible(true);
-                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(localButton);
-                    currentFrame.dispose();
-
-                     */
 
                 }
                 if (button == onlineButton) {
@@ -145,14 +117,10 @@ public class Menu extends JPanel {
                 if (button == soundButton) {
                     if (isPlaying) {
                         clip.stop();
-
                         isPlaying = false;
 
                     } else {
                         clip.start();
-
-
-
                         isPlaying = true;
                     }
 
@@ -177,17 +145,12 @@ public class Menu extends JPanel {
             public void mouseEntered(MouseEvent e) {
                 if (button == singleButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/single.png"))));
-
-
                 }
                 if (button == localButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/local.png"))));
-
-
                 }
                 if (button == onlineButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/online.png"))));
-
                 }
                 if (button == soundButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/sound.png"))));
@@ -197,8 +160,6 @@ public class Menu extends JPanel {
                 }
                 if (button == exitButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/exit.png"))));
-
-
                 }
 
             }
