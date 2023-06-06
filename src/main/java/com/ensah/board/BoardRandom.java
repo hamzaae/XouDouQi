@@ -23,8 +23,6 @@ public class BoardRandom extends BoardGui{
     static Random random = new Random();
 
 
-
-
     public BoardRandom(Player player1, Player player2){
         super(player1, player2);
 
@@ -176,7 +174,6 @@ public class BoardRandom extends BoardGui{
                         playerWin.setScore(playerWin.getScore()+1);
                     }
                 }
-
                 selectedAnimal = null;
             }
 
@@ -194,7 +191,6 @@ public class BoardRandom extends BoardGui{
 
     }
 
-
     public void randomPlayer(){
         int randomAnimalIndex = random.nextInt(animals.size());
         while (!animals.get(randomAnimalIndex).getPlayer().getUsername().equals("1")){
@@ -207,9 +203,13 @@ public class BoardRandom extends BoardGui{
             int randomMoveIndex = random.nextInt(possibleMoves.size());
             randomAnimal.move(possibleMoves.get(randomMoveIndex));
         }
+        // Kill enemy
+        for (Animal a : animals) {
+            if (randomAnimal.getPosition().equals(a.getPosition()) && !a.getPlayer().isTurn()) {
+                animals.remove(a);
+                break;
+            }
+        }
     }
-
-
-
 
 }

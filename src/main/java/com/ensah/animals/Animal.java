@@ -2,7 +2,6 @@ package com.ensah.animals;
 
 
 import com.ensah.board.BoardGui;
-import com.ensah.board.BoardLocal;
 import com.ensah.board.Player;
 import com.ensah.board.Position;
 
