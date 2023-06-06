@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" afterDir="false" />
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686074507860</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="checking...">
+      <created>1686075905346</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686075905346</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

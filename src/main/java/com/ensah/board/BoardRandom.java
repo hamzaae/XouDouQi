@@ -28,8 +28,7 @@ public class BoardRandom extends BoardGui{
 
     }
 
-
-    public void paintComponent(Graphics g){
+    /*public void paintComponent(Graphics g){
         Graphics2D g2D = (Graphics2D) g;
         // Drawing board squares
         for (int y = 0; y < 9; y++) {
@@ -88,7 +87,7 @@ public class BoardRandom extends BoardGui{
         }
 
 
-    }
+    }*/
 
     public void actions(JFrame frame){
         frame.addMouseMotionListener(new MouseMotionListener() {

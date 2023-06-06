@@ -14,13 +14,14 @@ import java.util.ArrayList;
 
 public abstract class BoardGui extends JPanel {
     public String file;
+
     public static ArrayList<Animal> animals = new ArrayList<>();
     static Animal selectedAnimal;
     public static Player player1;
     public static Player player2;
     public Player playerWin;
     static ArrayList<Position> possibleMoves = new ArrayList<>();
-    static final int carree=64;
+    static final int carree = 64;
 
 
     public BoardGui(Player player1, Player player2, String file){
@@ -89,7 +90,6 @@ public abstract class BoardGui extends JPanel {
                 g2D.fillRect(r * carree, c * carree, carree, carree);
             }
         }
-
 
 
         // Drawing animals
