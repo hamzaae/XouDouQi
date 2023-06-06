@@ -81,10 +81,10 @@ public class Reseau extends JPanel{
                         pan.setBackground(Color.black);
                         pan.setBounds(64*7,0,800-64*7,612);
                         frame.add(pan);
-                        BoardServer boardNetwork = new BoardServer(new Player("1",true), new Player("2", false), frame);
-                        BoardServer.addAnimals();
-                        frame.add(boardNetwork);
-                        BoardServer.actions(frame);
+                        BoardServer boardServer = new BoardServer(new Player("1",true), new Player("2", false), frame);
+                        boardServer.addAnimals();
+                        frame.add(boardServer);
+                        boardServer.actions(frame);
                         frame.setVisible(true);
 
                     } catch (Exception ex) {
@@ -107,9 +107,9 @@ public class Reseau extends JPanel{
                     pan.setBounds(64*7,0,800-64*7,612);
                     frame.add(pan);
                     BoardClient boardClient = new BoardClient(new Player("1",false), new Player("2", false), ipAdresse, frame);
-                    BoardClient.addAnimals();
+                    boardClient.addAnimals();
                     frame.add(boardClient);
-                    BoardClient.actions(frame);
+                    boardClient.actions(frame);
                     frame.setVisible(true);
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(JoinButton);
                     currentFrame.dispose();

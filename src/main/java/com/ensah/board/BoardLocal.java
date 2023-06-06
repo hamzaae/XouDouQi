@@ -1,0 +1,137 @@
+package com.ensah.board;
+
+import com.ensah.Interface.Display;
+import com.ensah.animals.Animal;
+import com.ensah.animals.*;
+import com.ensah.utils.LoadSaveBoard;
+
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+public class BoardLocal extends BoardGui{
+
+    public BoardLocal(Player player1, Player player2){
+        super(player1, player2);
+
+    }
+
+    @Override
+    public void actions(JFrame frame){
+        frame.addMouseMotionListener(new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                if(selectedAnimal != null){
+                    for (Position p : getMovedAnimalPossibleMoves(selectedAnimal)) {
+                        if (p.getJ()==e.getY()/carree && p.getI()==e.getX()/carree){
+                            //selectedAnimal.setPosition((e.getX()/64),(e.getY()/64));
+                            frame.repaint();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+            }
+        });
+        frame.addMouseListener(new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                selectedAnimal = getMovedAnimal(e.getX(),e.getY());
+                frame.repaint();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+                selectedAnimal = getMovedAnimal(e.getX(),e.getY());
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                boolean animalMoved = false;
+                Position movedPosition = new Position(e.getX() / carree, e.getY() / carree);
+
+
+                try {
+                    possibleMoves = getMovedAnimalPossibleMoves(selectedAnimal);
+
+                    for (Position p : possibleMoves) {
+                        if (p.equals(movedPosition)) {
+                            selectedAnimal.move(movedPosition);
+                            animalMoved = true;
+                            Display.hel+="Animal moved successfully.\n";
+                            Display.console.setText(Display.hel);
+                            //System.out.println();
+                            possibleMoves.clear();
+                            // Kill the Enemy's Animal Or End Game
+                            for (Animal a : animals) {
+                                // Kill enemy
+                                if (selectedAnimal.getPosition().equals(a.getPosition()) && !a.getPlayer().isTurn()) {
+                                    animals.remove(a);
+
+                                    Display.hel+="Animal killed \n";
+                                    Display.console.setText(Display.hel);
+                                    //System.out.println("Animal killed");
+                                    break;
+                                }
+                            }
+                            break;
+
+                        }
+                    }
+                }catch (NullPointerException ex){
+
+                    Display.hel+="No animal selected\n";
+                    Display.console.setText(Display.hel);
+                    //System.out.println("No animal selected");
+                }
+
+                if (animalMoved) {
+                    changePlayer();
+                    frame.repaint();
+                    // End game
+                    playerWin = endGame();
+                    if (playerWin != null) {
+                        // TODO
+                        player1.setTurn(false);
+                        player2.setTurn(false);
+
+                        playerWin.setScore(playerWin.getScore()+1);
+                    }
+
+                }
+
+                selectedAnimal = null;
+            }
+
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+
+    }
+
+
+}

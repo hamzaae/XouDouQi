@@ -8,8 +8,8 @@ import com.ensah.board.Position;
 import javax.swing.*;
 import java.io.IOException;
 
-import static com.ensah.board.BoardServer.animals;
-import static com.ensah.board.BoardServer.player1;
+import static com.ensah.board.BoardGui.animals;
+import static com.ensah.board.BoardGui.player1;
 
 public class ServerTh extends Thread{
     JFrame frame;

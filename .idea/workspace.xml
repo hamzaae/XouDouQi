@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="networking">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardSquare.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerTh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/network/ServerTh.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686051993906</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="networking">
+      <created>1686061240628</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1686061240628</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

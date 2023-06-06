@@ -1,14 +1,14 @@
 package com.ensah.Interface;
 
-import com.ensah.board.BoardGUI;
+import com.ensah.board.BoardLocal;
 import com.ensah.board.Player;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-import static com.ensah.board.BoardGUI.actions;
-import static com.ensah.board.BoardGUI.addAnimals;
+
+
 
 public class Display {
     public static String str="";
@@ -66,10 +66,10 @@ public class Display {
 
 
 
-        BoardGUI boardGUI = new BoardGUI(new Player("1", false), new Player("2", true));
-        addAnimals();
-        frame.add(boardGUI);
-        actions(frame);
+        BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true));
+        boardLocal.addAnimals();
+        frame.add(boardLocal);
+        boardLocal.actions(frame);
         frame.setTitle("Xou Dou Qi game");
         frame.setVisible(true);
 

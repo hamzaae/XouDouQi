@@ -1,7 +1,8 @@
 package com.ensah.animals;
 
 
-import com.ensah.board.BoardGUI;
+import com.ensah.board.BoardGui;
+import com.ensah.board.BoardLocal;
 import com.ensah.board.Player;
 import com.ensah.board.Position;
 
@@ -133,7 +134,7 @@ public abstract class Animal {
             }
 
             // Check if not same Player's animal or Sanctuary or can jump Rat
-            for (Animal a : BoardGUI.animals) {
+            for (Animal a : BoardGui.animals) {
                 // Check Rat and Jumpers
                 if ((animal.getName().equals("Tiger") || animal.getName().equals("Lion"))&&a.getName().equals("Rat")){
                     // Jump vertically

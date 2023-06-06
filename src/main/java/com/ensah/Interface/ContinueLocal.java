@@ -7,12 +7,7 @@ public class ContinueLocal {
  */
 package com.ensah.Interface;
 
-import com.ensah.board.BoardGUI;
-import com.ensah.board.Player;
-
 import javax.imageio.ImageIO;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -21,9 +16,6 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
-
-import static com.ensah.board.BoardGUI.actions;
-import static com.ensah.board.BoardGUI.addAnimals;
 
 public class ContinueLocal extends JPanel{
     private BufferedImage background;

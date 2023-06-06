@@ -74,9 +74,9 @@ public class Modes extends JPanel {
                     pan.setBounds(64*7,0,800-64*7,612);
                     frame.add(pan);
                     BoardRandom boardRandom = new BoardRandom(new Player("1",false), new Player("2", true));
-                    BoardRandom.addAnimals();
+                    boardRandom.addAnimals();
                     frame.add(boardRandom);
-                    BoardRandom.actions(frame);
+                    boardRandom.actions(frame);
                     frame.setVisible(true);
 
 

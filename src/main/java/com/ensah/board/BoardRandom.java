@@ -19,48 +19,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-public class BoardRandom extends JPanel{
-    public static ArrayList<Animal> animals = new ArrayList<>();
-    public static Animal selectedAnimal;
-    public static Player player1;
-    public static Player player2;
-    private static ArrayList<Position> possibleMoves = new ArrayList<>();
+public class BoardRandom extends BoardGui{
     static Random random = new Random();
 
 
 
 
     public BoardRandom(Player player1, Player player2){
-        this.setPreferredSize(new Dimension(7*64,9*64));
-        BoardRandom.player1 = player1;
-        BoardRandom.player2 = player2;
+        super(player1, player2);
 
     }
 
-
-    public static void addAnimals(){
-        // Player 1_left
-
-        animals.add(new Rat(player1,new Position(0,2),true));
-        animals.add(new Cat(player1,new Position(5,1),true));
-        animals.add(new Dog(player1,new Position(1,1),true));
-        animals.add(new Wolf(player1,new Position(4,2),true));
-        animals.add(new Leopard(player1,new Position(2,2),true));
-        animals.add(new Tiger(player1,new Position(6,0),true));
-        animals.add(new Lion(player1,new Position(0,0),true));
-        animals.add(new Elephant(player1,new Position(6,2),true));
-
-        // Player2_right
-
-        animals.add(new Rat(new Position(6,6),true,player2));
-        animals.add(new Cat(new Position(1,7),true,player2));
-        animals.add(new Dog(new Position(5,7),true,player2));
-        animals.add(new Wolf(new Position(2,6),true,player2));
-        animals.add(new Leopard(new Position(4,6),true,player2));
-        animals.add(new Tiger(new Position(0,8),true,player2));
-        animals.add(new Lion(new Position(6,8),true,player2));
-        animals.add(new Elephant(new Position(0,6),true,player2));
-    }
 
     public void paintComponent(Graphics g){
         Graphics2D g2D = (Graphics2D) g;
@@ -123,7 +92,7 @@ public class BoardRandom extends JPanel{
 
     }
 
-    public static void actions(JFrame frame){
+    public void actions(JFrame frame){
         frame.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -183,13 +152,6 @@ public class BoardRandom extends JPanel{
                                     break;
                                 }
                             }
-                            // End game
-                            Player playerWin;
-                            playerWin = endGame();
-                            if (playerWin != null) {
-                                // TODO
-                                playerWin.setScore(playerWin.getScore()+1);
-                            }
                             break;
 
                         }
@@ -204,6 +166,15 @@ public class BoardRandom extends JPanel{
                     randomPlayer();
                     frame.repaint();
                     changePlayer();
+                    // End game
+                    playerWin = endGame();
+                    if (playerWin != null) {
+                        // TODO
+                        player1.setTurn(false);
+                        player2.setTurn(false);
+
+                        playerWin.setScore(playerWin.getScore()+1);
+                    }
                 }
 
                 selectedAnimal = null;
@@ -223,25 +194,8 @@ public class BoardRandom extends JPanel{
 
     }
 
-    public static Animal getMovedAnimal(int x, int y){
-        Position pA = new Position(x/64, y/64);
-        for (Animal animal:animals){
-            if(animal.getPosition().equals(pA)){
-                return animal;
-            }
-        }
-        return null;
-    }
 
-    public static ArrayList<Position> getMovedAnimalPossibleMoves(Animal animal){
-        possibleMoves.clear();
-        if (animal.getPlayer().isTurn()) {
-            possibleMoves.addAll(animal.checkMovements(animal));
-        }
-        return possibleMoves;
-    }
-
-    public static void randomPlayer(){
+    public void randomPlayer(){
         int randomAnimalIndex = random.nextInt(animals.size());
         while (!animals.get(randomAnimalIndex).getPlayer().getUsername().equals("1")){
             randomAnimalIndex = random.nextInt(animals.size());
@@ -255,28 +209,7 @@ public class BoardRandom extends JPanel{
         }
     }
 
-    public static void changePlayer() {
-        if (player1.isTurn()) {
-            player1.setTurn(false);
-            player2.setTurn(true);
-        } else {
-            player2.setTurn(false);
-            player1.setTurn(true);
 
-        }
-    }
-
-    public static Player endGame(){
-        if(selectedAnimal.getPosition().equals(new Position(3,8)) && selectedAnimal.getPlayer().getUsername().equals("1")){
-            System.out.println("CheckMate P1 wins");
-            return player1;
-        }
-        if(selectedAnimal.getPosition().equals(new Position(3,0)) && selectedAnimal.getPlayer().getUsername().equals("2")){
-            System.out.println("CheckMate P2 wins");
-            return player2;
-        }
-        return null;
-    }
 
 
 }
