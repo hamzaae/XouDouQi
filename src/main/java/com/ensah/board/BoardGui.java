@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class BoardGui extends JPanel {
+    public String file;
     public static ArrayList<Animal> animals = new ArrayList<>();
     static Animal selectedAnimal;
     public static Player player1;
@@ -22,11 +23,11 @@ public abstract class BoardGui extends JPanel {
     static final int carree=64;
 
 
-    public BoardGui(Player player1, Player player2){
+    public BoardGui(Player player1, Player player2, String file){
         this.setPreferredSize(new Dimension(7*64,9*64));
-        BoardLocal.player1 = player1;
-        BoardLocal.player2 = player2;
-
+        BoardGui.player1 = player1;
+        BoardGui.player2 = player2;
+        this.file = file;
     }
 
     public void paintComponent(Graphics g){
@@ -101,7 +102,7 @@ public abstract class BoardGui extends JPanel {
 
     public void addAnimals(){
         try {
-            String [][] newBoard = LoadSaveBoard.loadGame("src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+            String [][] newBoard = LoadSaveBoard.loadGame(file);
             for (int i=0;i<9;i++){
                 for (int j=0;j<7;j++){
                     // Player 1_left

@@ -23,8 +23,8 @@ public class BoardRandom extends BoardGui{
     static Random random = new Random();
 
 
-    public BoardRandom(Player player1, Player player2){
-        super(player1, player2);
+    public BoardRandom(Player player1, Player player2, String file){
+        super(player1, player2, file);
 
     }
 

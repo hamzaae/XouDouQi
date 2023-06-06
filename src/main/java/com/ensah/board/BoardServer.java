@@ -26,8 +26,8 @@ public class BoardServer extends BoardGui{
 
 
 
-    public BoardServer(Player player1, Player player2, JFrame frame){
-        super(player1, player2);
+    public BoardServer(Player player1, Player player2, JFrame frame, String file){
+        super(player1, player2, file);
 
         responceTh = new ServerTh(frame);
         responceTh.start();

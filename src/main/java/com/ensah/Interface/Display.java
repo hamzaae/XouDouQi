@@ -66,7 +66,7 @@ public class Display {
 
 
 
-        BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true));
+        BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
         boardLocal.addAnimals();
         frame.add(boardLocal);
         boardLocal.actions(frame);

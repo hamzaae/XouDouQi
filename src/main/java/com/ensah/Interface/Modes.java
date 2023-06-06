@@ -73,7 +73,7 @@ public class Modes extends JPanel {
                     pan.setBackground(Color.black);
                     pan.setBounds(64*7,0,800-64*7,612);
                     frame.add(pan);
-                    BoardRandom boardRandom = new BoardRandom(new Player("1",false), new Player("2", true));
+                    BoardRandom boardRandom = new BoardRandom(new Player("1",false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                     boardRandom.addAnimals();
                     frame.add(boardRandom);
                     boardRandom.actions(frame);

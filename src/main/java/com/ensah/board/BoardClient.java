@@ -30,8 +30,8 @@ public class BoardClient extends BoardGui{
     public static ClientTh responceTh;
 
 
-    public BoardClient(Player player1, Player player2, String ipAdresse, JFrame frame){
-        super(player1, player2);
+    public BoardClient(Player player1, Player player2, String ipAdresse, JFrame frame, String file){
+        super(player1, player2, file);
         clientProg = ClientProg.getConnnection(ipAdresse);
         responceTh = new ClientTh(frame);
         responceTh.start();

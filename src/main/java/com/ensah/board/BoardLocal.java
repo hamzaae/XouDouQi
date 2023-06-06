@@ -11,8 +11,8 @@ import java.awt.event.MouseMotionListener;
 
 public class BoardLocal extends BoardGui{
 
-    public BoardLocal(Player player1, Player player2){
-        super(player1, player2);
+    public BoardLocal(Player player1, Player player2, String file){
+        super(player1, player2, file);
 
     }
 
