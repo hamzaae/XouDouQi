@@ -180,6 +180,7 @@ public class BoardClient extends JPanel{
                             animalMoved = true;
                             System.out.println("Animal moved successfully.");
                             possibleMoves.clear();
+                            player2.setTurn(false);
                             // Kill the Enemy's Animal Or End Game
                             for (Animal a : animals) {
                                 // Kill enemy
@@ -209,8 +210,6 @@ public class BoardClient extends JPanel{
 
                 if (animalMoved) {
                     String line = selectedAnimal.getName() +" "+ selectedAnimal.getPosition().getI() +" "+ selectedAnimal.getPosition().getJ();
-                    //System.out.println(line);
-                    //frame.repaint(); // mkyrepaintich zzzzzzzzzz
                     clientProg.send(line);
 
                     selectedAnimal = null;
@@ -244,7 +243,7 @@ public class BoardClient extends JPanel{
 
     public static ArrayList<Position> getMovedAnimalPossibleMoves(Animal animal){
         possibleMoves.clear();
-        if (animal.getPlayer().getUsername().equals("2")) {
+        if (animal.getPlayer().getUsername().equals("2") && player2.isTurn()) {
             possibleMoves.addAll(animal.checkMovements(animal));
         }
         return possibleMoves;
@@ -257,10 +256,6 @@ public class BoardClient extends JPanel{
         } else {
             player2.setTurn(false);
             player1.setTurn(true);
-            //randomPlayer(frame);
-            //boardStatus.board = getBoardCurrent();
-            //System.out.println(boardStatus.board);
-            //aiMove(boardStatus, frame);
         }
     }
 

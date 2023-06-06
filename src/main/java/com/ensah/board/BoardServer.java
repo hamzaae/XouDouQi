@@ -180,6 +180,7 @@ public class BoardServer extends JPanel{
                             selectedAnimal.move(movedPosition);
                             animalMoved = true;
                             System.out.println("Animal moved successfully.");
+                            player1.setTurn(false);
                             possibleMoves.clear();
                             player1.setTurn(false);
                             // Kill the Enemy's Animal Or End Game

@@ -212,7 +212,7 @@ public abstract class Animal {
         if (animal.getName().equals("Rat") && enemy.getName().equals("Elephant") && ratInRiver(animal)) return false;
         if (animal.getName().equals("Elephant") && enemy.getName().equals("Rat")) return false;
         if (animal.getName().equals("Rat") && enemy.getName().equals("Elephant")) return true;
-        if (isTrapped(enemy)) return true;
+        if (animal.isTrapped(enemy)) return true;
         return animal.getPower() >= enemy.getPower();
     }
 
@@ -233,10 +233,10 @@ public abstract class Animal {
 
     public boolean isTrapped(Animal enemy){
         // not simplified just to be easy to understand
-        if (enemy.getPosition().equals(new Position(2,8)) || enemy.getPosition().equals(new Position(4,8))
-                || enemy.getPosition().equals(new Position(3,7))) return true;
-        if (enemy.getPosition().equals(new Position(2,0)) || enemy.getPosition().equals(new Position(4,0))
-                || enemy.getPosition().equals(new Position(3,1))) return true;
+        if ((enemy.getPosition().equals(new Position(2,8)) || enemy.getPosition().equals(new Position(4,8))
+                || enemy.getPosition().equals(new Position(3,7))) && (getPlayer().getUsername().equals("2"))) return true;
+        if ((enemy.getPosition().equals(new Position(2,0)) || enemy.getPosition().equals(new Position(4,0))
+                || enemy.getPosition().equals(new Position(3,1))) && (getPlayer().getUsername().equals("1"))) return true;
         return false;
     }
 

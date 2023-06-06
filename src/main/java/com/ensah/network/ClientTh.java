@@ -5,8 +5,7 @@ import com.ensah.board.Position;
 
 import javax.swing.*;
 
-import static com.ensah.board.BoardClient.animals;
-import static com.ensah.board.BoardClient.clientProg;
+import static com.ensah.board.BoardClient.*;
 
 public class ClientTh extends Thread{
     JFrame frame;
@@ -33,6 +32,7 @@ public class ClientTh extends Thread{
                     break;
                 }
             }
+            player2.setTurn(true);
             frame.repaint();
         }
     }
