@@ -47,7 +47,7 @@ public class Menu extends JPanel {
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
         isPlaying = true;
         try {
-            File file = new File("C:\\Users\\ADMIN\\Documents\\XouDouQi\\src\\main\\resources\\Crash.wav");
+            File file = new File("src\\main\\resources\\Crash.wav");
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
