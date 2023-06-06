@@ -92,8 +92,8 @@ public class Reseau extends JPanel{
                     }
 
 
-                    //JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(createButton);
-                    //currentFrame.dispose();
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(createButton);
+                    currentFrame.dispose();
                 }
                 if (button == JoinButton) {
                     String ipAdresse=JOptionPane.showInputDialog("Please entrer the game's host IP  ");
@@ -111,6 +111,8 @@ public class Reseau extends JPanel{
                     frame.add(boardClient);
                     BoardClient.actions(frame);
                     frame.setVisible(true);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(JoinButton);
+                    currentFrame.dispose();
 
 
 

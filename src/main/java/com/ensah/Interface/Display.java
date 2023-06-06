@@ -28,14 +28,14 @@ public class Display {
         pan.setBounds(64 * 7, 0, 850 - (64 * 7), 120);
         Font font=new Font("Cambria",Font.BOLD,14);
 
-        text = new JTextPane();
+        /*text = new JTextPane();
         text.setBackground(Color.decode("#212121"));
         text.setBounds(0, 0, 850 - (64 * 7), 120);
         text.setForeground(Color.WHITE);
         text.setText("------------------ J U N G L E  G A M E ---------------- \n\n" + BoardGUI.word + "PLAYER 1 :\n \n" + "PLAYER 2 : \n\n");
         text.setFont(font);
         text.setEditable(false);
-        pan.add(text);
+        pan.add(text);*/
         frame.add(pan);
 
 
@@ -74,10 +74,10 @@ public class Display {
         frame.setVisible(true);
 
     }
-    public static void updateText() {
+    /*public static void updateText() {
         String str = "------------------ J U N G L E  G A M E ---------------- \n\n";
         str += BoardGUI.word + "PLAYER 1 :\n \n";
         str += BoardGUI.word + "PLAYER 2 : \n\n";
         text.setText(str);
-    }
+    }*/
 }

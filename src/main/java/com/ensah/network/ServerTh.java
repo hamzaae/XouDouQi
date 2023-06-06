@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.io.IOException;
 
 import static com.ensah.board.BoardServer.animals;
+import static com.ensah.board.BoardServer.player1;
 
 public class ServerTh extends Thread{
     JFrame frame;
@@ -31,17 +32,20 @@ public class ServerTh extends Thread{
                 for (Animal a : animals) {
                     if (a.getName().equals(arrOfStr[0]) && a.getPlayer().getUsername().equals("2")) {
                         a.setPosition(new Position(Integer.parseInt(arrOfStr[1]), Integer.parseInt(arrOfStr[2])));
-                    }
-                    // Kill enemy // todoooo
-                    if (a.getPosition().equals(new Position(Integer.parseInt(arrOfStr[1]), Integer.parseInt(arrOfStr[2]))) && a.getPlayer().getUsername().equals("1")) {
-                        animals.remove(a);
-                        System.out.println("Animal killed");
-                        frame.repaint();
+                        // Kill enemy
+                        for(Animal animal:animals){
+                            if (a.getPosition().equals(animal.getPosition()) && animal.getPlayer().getUsername().equals("1")) {
+                                animals.remove(animal);
+                                System.out.println("Animal killed ServerTh");
+                                break;
+                            }
+                        }
                         break;
                     }
 
                 }
                 frame.repaint();
+                player1.setTurn(true);
             } catch (IOException | ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }

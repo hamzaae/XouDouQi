@@ -23,6 +23,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class BoardClient extends JPanel{
     public static ArrayList<Animal> animals = new ArrayList<>();
@@ -209,6 +210,7 @@ public class BoardClient extends JPanel{
 
 
                 if (animalMoved) {
+                    player2.setTurn(false);
                     String line = selectedAnimal.getName() +" "+ selectedAnimal.getPosition().getI() +" "+ selectedAnimal.getPosition().getJ();
                     clientProg.send(line);
 
@@ -244,7 +246,7 @@ public class BoardClient extends JPanel{
     public static ArrayList<Position> getMovedAnimalPossibleMoves(Animal animal){
         possibleMoves.clear();
         if (animal.getPlayer().getUsername().equals("2") && player2.isTurn()) {
-            possibleMoves.addAll(animal.checkMovements(animal));
+            possibleMoves.addAll(checkMovements(animal));
         }
         return possibleMoves;
     }
@@ -269,6 +271,121 @@ public class BoardClient extends JPanel{
             return player2;
         }
         return null;
+    }
+
+    public static ArrayList<Position> checkMovements(Animal animal) {
+        ArrayList<Position> possibleMoves = new ArrayList<>();
+        // Pos I & J
+        int I=animal.getPosition().getI();
+        int J=animal.getPosition().getJ();
+
+        Position currentPosition = new Position(animal.getPosition().getI(),animal.getPosition().getJ());
+        Position pLeft = new Position(currentPosition.getI()-1,currentPosition.getJ());
+        Position pRight = new Position(currentPosition.getI()+1,currentPosition.getJ());
+        Position pUp = new Position(currentPosition.getI(),currentPosition.getJ()-1);
+        Position pDown = new Position(currentPosition.getI(),currentPosition.getJ()+1);
+        Position pUpJump = new Position(currentPosition.getI(),currentPosition.getJ()-4);
+        Position pDownJump = new Position(currentPosition.getI(),currentPosition.getJ()+4);
+        Position pLeftJump = new Position(currentPosition.getI()-3,currentPosition.getJ());
+        Position pRightJump = new Position(currentPosition.getI()+3,currentPosition.getJ());
+
+        // Check Borders
+        if (I>0) {possibleMoves.add(pLeft);}
+        if (I<6) {possibleMoves.add(pRight);}
+        if (J>0) {possibleMoves.add(pUp);}
+        if (J<8) {possibleMoves.add(pDown);}
+        // Check if not Swim (not rat) ,otherway: check river's border
+        if (!animal.getName().equals("Rat")) {
+            if ((I == 1 || I == 2 || I == 4 || I == 5) && J == 6) {
+                possibleMoves.remove(pUp);
+            }
+            if ((I == 1 || I == 2 || I == 4 || I == 5) && J == 2) {
+                possibleMoves.remove(pDown);
+            }
+            if (J == 3 || J == 4 || J == 5) {
+                possibleMoves.remove(pLeft);
+                possibleMoves.remove(pRight);
+            }
+        }
+        // Check if Jump (Lion || Tiger)
+        if (animal.getName().equals("Lion") || animal.getName().equals("Tiger")){
+            if ((I == 1 || I == 2 || I == 4 || I == 5) && J == 6){possibleMoves.add(pUpJump);}
+            if ((I == 1 || I == 2 || I == 4 || I == 5) && J == 2){possibleMoves.add(pDownJump);}
+            if ((J == 3 || J == 4 || J == 5) && (I==0 || I==3)){possibleMoves.add(pRightJump);}
+            if ((J == 3 || J == 4 || J == 5) && (I==6 || I==3)){possibleMoves.add(pLeftJump);}
+        }
+
+        // Check if not same Player's animal or Sanctuary or can jump Rat
+        for (Animal a : animals) {
+            // Check Rat and Jumpers
+            if ((animal.getName().equals("Tiger") || animal.getName().equals("Lion")) && a.getName().equals("Rat")){
+                // Jump vertically
+                if (animal.getPosition().getI()==a.getPosition().getI() && animal.getPosition().getJ()==2) {
+                    for (int i = 1; i < 4; i++) {
+                        if (animal.getPosition().getJ() + i == a.getPosition().getJ()) {
+                            possibleMoves.remove(pDownJump);
+                            break;
+                        }
+                    }
+                }
+                if (animal.getPosition().getI()==a.getPosition().getI() && animal.getPosition().getJ()==6){
+                    for (int i=3;i>0;i--){
+                        if (animal.getPosition().getJ()-i==a.getPosition().getJ()){
+                            possibleMoves.remove(pUpJump);
+                            break;
+                        }
+                    }
+
+                }
+                // Jump horizontally
+                if (animal.getPosition().getJ()==a.getPosition().getJ() && (animal.getPosition().getI()==0||animal.getPosition().getI()==3)) {
+                    for (int i = 1; i < 3; i++) {
+                        if (animal.getPosition().getI() + i == a.getPosition().getI()) {
+                            possibleMoves.remove(pRightJump);
+                            break;
+                        }
+                    }
+                }
+                if (animal.getPosition().getJ()==a.getPosition().getJ() && (animal.getPosition().getI()==6||animal.getPosition().getI()==3)) {
+                    for (int i=2;i>0;i--){
+                        if (animal.getPosition().getI()-i==a.getPosition().getI()){
+                            possibleMoves.remove(pLeftJump);
+                            break;
+                        }
+                    }
+
+                }
+
+            }
+            Iterator<Position> positionIterator = possibleMoves.iterator();
+            while (positionIterator.hasNext()) {
+                Position p = positionIterator.next();
+                // Not same player animal
+                if (a.getPlayer().isTurn() && p.equals(a.getPosition())) {
+                    positionIterator.remove();
+                    break;
+                }
+                // Not 1st player Sanctuary
+                if (animal.getPlayer().getUsername().equals("1") && p.equals(new Position(3, 0))) {
+                    positionIterator.remove();
+                    break;
+                }
+                // Not 2nd player Sanctuary
+                if (animal.getPlayer().getUsername().equals("2") && p.equals(new Position(3, 8))) {
+                    positionIterator.remove();
+                    break;
+                }
+                // Check Rat and Elephant
+                if (p.equals(a.getPosition()) && !animal.canKill(animal, a)) {
+                    positionIterator.remove();
+                    break;
+                }
+
+            }
+        }
+
+
+        return possibleMoves;
     }
 
 

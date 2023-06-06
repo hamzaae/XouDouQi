@@ -45,7 +45,7 @@ public class Menu extends JPanel {
 
         // Set the preferred size of the panel to match the background image size
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
-        isPlaying = true;
+        isPlaying = false;
         try {
             File file = new File("src\\main\\resources\\Crash.wav");
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
