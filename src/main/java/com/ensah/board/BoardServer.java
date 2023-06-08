@@ -3,23 +3,12 @@ package com.ensah.board;
 
 import com.ensah.Interface.Reseau;
 import com.ensah.animals.Animal;
-import com.ensah.animals.*;
-
 import com.ensah.network.ServerTh;
-
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
 
 public class BoardServer extends BoardGui{
     public static ServerTh responceTh;

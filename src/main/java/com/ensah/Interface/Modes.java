@@ -65,7 +65,7 @@ public class Modes extends JPanel {
 
             public void mouseClicked(MouseEvent e){
                 if (button == easyButton) {
-                    JFrame frame = new JFrame();
+                    JFrame frame = new JFrame("EASY");
                     frame.setSize( 800, 612);
                     frame.setResizable(false);
                     frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -77,6 +77,7 @@ public class Modes extends JPanel {
                     boardRandom.addAnimals();
                     frame.add(boardRandom);
                     boardRandom.actions(frame);
+
                     frame.setVisible(true);
 
 

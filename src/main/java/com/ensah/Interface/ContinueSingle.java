@@ -72,6 +72,7 @@ public class ContinueSingle extends JPanel{
                     currentFrame.dispose();
                 }
                 if (button == ContinueButton) {
+
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(ContinueButton);
                     currentFrame.dispose();
 

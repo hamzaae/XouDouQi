@@ -1,11 +1,6 @@
 package com.ensah.board;
 
 import com.ensah.animals.Animal;
-import com.ensah.animals.*;
-import com.ensah.board.Player;
-import com.ensah.board.Position;
-
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;

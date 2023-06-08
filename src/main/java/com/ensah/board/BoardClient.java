@@ -7,23 +7,19 @@ public class BoardClient {
 package com.ensah.board;
 
 import com.ensah.animals.Animal;
-import com.ensah.animals.*;
+
 
 import com.ensah.network.ClientProg;
 import com.ensah.network.ClientTh;
-//import com.ensah.minimax.Algorithm;
 
-import javax.imageio.ImageIO;
+
+
 import javax.swing.*;
-import java.awt.*;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
+
 
 public class BoardClient extends BoardGui{
     public static ClientProg clientProg;

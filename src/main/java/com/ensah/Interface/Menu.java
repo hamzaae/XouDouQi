@@ -14,7 +14,7 @@ import java.awt.event.MouseEvent;
 
 public class Menu extends JPanel {
     private  Clip clip;
-    private boolean isPlaying;
+    private boolean isPlaying,isClicked;
     private BufferedImage background;
     private final JButton singleButton,localButton,onlineButton;
     private final JButton soundButton,infoButton,exitButton;
@@ -115,13 +115,17 @@ public class Menu extends JPanel {
                     currentFrame.dispose();
                 }
                 if (button == soundButton) {
+                    isClicked=false;
                     if (isPlaying) {
                         clip.stop();
+                        button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/mute.png"))));
                         isPlaying = false;
-
+                        isClicked = true;
                     } else {
                         clip.start();
+                        button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/sound.png"))));
                         isPlaying = true;
+                        isClicked = false;
                     }
 
                     }
@@ -153,7 +157,14 @@ public class Menu extends JPanel {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/online.png"))));
                 }
                 if (button == soundButton) {
-                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/sound.png"))));
+                    if (isClicked) {
+                        button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/mute.png"))));
+                    }
+                    else {
+                        button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/sound.png"))));
+
+                    }
+
                 }
                 if (button == infoButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/info.png"))));
@@ -176,7 +187,16 @@ public class Menu extends JPanel {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/menu/online.png"))));
                 }
                 if (button == soundButton) {
-                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/sound.png"))));
+
+                    if (isClicked) {
+                        button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/mute.png"))));
+                    } else {
+                        button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/sound.png"))));
+                    }
+
+
+
+                   // button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/sound.png"))));
                 }
                 if (button == infoButton) {
                     button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/info.png"))));

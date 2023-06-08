@@ -81,7 +81,7 @@ public class Reseau extends JPanel{
                         pan.setBackground(Color.black);
                         pan.setBounds(64*7,0,800-64*7,612);
                         frame.add(pan);
-                        BoardServer boardServer = new BoardServer(new Player("1",true), new Player("2", false), frame, "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                        BoardServer boardServer = new BoardServer(new Player("1",true), new Player("2", false), frame,"src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                         boardServer.addAnimals();
                         frame.add(boardServer);
                         boardServer.actions(frame);
@@ -106,7 +106,7 @@ public class Reseau extends JPanel{
                     pan.setBackground(Color.black);
                     pan.setBounds(64*7,0,800-64*7,612);
                     frame.add(pan);
-                    BoardClient boardClient = new BoardClient(new Player("1",false), new Player("2", false), ipAdresse, frame, "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                    BoardClient boardClient = new BoardClient(new Player("1",false), new Player("2", false), ipAdresse, frame,"src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                     boardClient.addAnimals();
                     frame.add(boardClient);
                     boardClient.actions(frame);

@@ -7,9 +7,6 @@ public class ContinueLocal {
  */
 package com.ensah.Interface;
 
-import com.ensah.board.BoardLocal;
-import com.ensah.board.Player;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -30,7 +27,7 @@ public class ContinueLocal extends JPanel{
 
         loadBackgroundImage();
 
-        setLayout(null); // Use null layout for custom positioning of components
+        setLayout(null);
 
         // Create  buttons with images
         newButton = createButton("/continue/new.png", 190, 330, 141, 53);
@@ -77,16 +74,6 @@ public class ContinueLocal extends JPanel{
                     currentFrame.dispose();
                 }
                 if (button == ContinueButton) {
-                    JFrame frame = new JFrame();
-                    frame.setSize(850, 612);
-                    frame.setResizable(false);
-                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                    BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\loadBoard.txt");
-                    boardLocal.addAnimals();
-                    frame.add(boardLocal);
-                    boardLocal.actions(frame);
-                    frame.setTitle("Xou Dou Qi game");
-                    frame.setVisible(true);
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(ContinueButton);
                     currentFrame.dispose();
 
