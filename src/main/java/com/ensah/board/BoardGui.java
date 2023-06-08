@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class BoardGui extends JPanel {
+    public String file;
     public static ArrayList<Animal> animals = new ArrayList<>();
     static Animal selectedAnimal;
     public static Player player1;
@@ -20,15 +21,13 @@ public abstract class BoardGui extends JPanel {
     public Player playerWin;
     static ArrayList<Position> possibleMoves = new ArrayList<>();
     static final int carree=64;
-    public String file;
 
 
-    public BoardGui(Player player1, Player player2,String file){
+    public BoardGui(Player player1, Player player2, String file){
         this.setPreferredSize(new Dimension(7*64,9*64));
-        BoardLocal.player1 = player1;
-        BoardLocal.player2 = player2;
-        this.file=file;
-
+        BoardGui.player1 = player1;
+        BoardGui.player2 = player2;
+        this.file = file;
     }
 
     public void paintComponent(Graphics g){
@@ -45,7 +44,7 @@ public abstract class BoardGui extends JPanel {
 
         Image river;
         try {
-            river = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\rever.png")).getScaledInstance(carree*2, carree*3, BufferedImage.SCALE_SMOOTH);
+            river = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\river1.png")).getScaledInstance(carree*2, carree*3, BufferedImage.SCALE_SMOOTH);
             g.drawImage(river, carree, 3*carree, this);
             g.drawImage(river, 4*carree, 3*carree, this);
         } catch (IOException e) {
@@ -53,32 +52,22 @@ public abstract class BoardGui extends JPanel {
         }
 
 
-
-
         // Drawing board squares
         for (int y = 0; y < 9; y++) {
             for (int x = 0; x < 7; x++) {
+                if((x==1||x==2||x==4||x==5)&&(y==3||y==4||y==5)) {
+                    g2D.setColor(new Color(35, 147, 200));
+                    g2D.fillRect(x * carree, y * carree, carree, carree);
+                }
                 if (((x==2||x==4)&&(y==0||y==8))||((y==1||y==7)&&x==3)) {
-                    Image trap;
-                    try {
-                        trap = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\trap2.png")).getScaledInstance(carree, carree, BufferedImage.SCALE_SMOOTH);
-                        g.drawImage(trap, x*carree, y*carree, this);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                    g2D.setColor(new Color(182, 109, 109));
+                    g2D.fillRect(x * carree, y * carree, carree, carree);
                 }
-
                 if (x==3&&(y==0||y==8)) {
-                    Image trap;
-                    try {
-                        trap = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\Goal.png")).getScaledInstance(carree, carree, BufferedImage.SCALE_SMOOTH);
-                        g.drawImage(trap, x*carree, y*carree, this);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                    g2D.setColor(new Color(84, 84, 84, 100));
+                    g2D.fillRect(x * carree, y * carree, carree, carree);
+
                 }
-
-
 
             }
         }
@@ -112,36 +101,31 @@ public abstract class BoardGui extends JPanel {
     }
 
     public void addAnimals(){
-
         try {
-            String [][] newBoard = LoadSaveBoard.loadGame("src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
-            if (!animals.isEmpty()) {
-                animals.clear();
-            }
-                for (int i=0;i<9;i++) {
-                    for (int j = 0; j < 7; j++) {
-                        // Player 1_left
-                        if (newBoard[i][j].equals("R")) {animals.add(new Rat(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("C")) {animals.add(new Cat(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("W")) {animals.add(new Wolf(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("D")) {animals.add(new Dog(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("P")) {animals.add(new Leopard(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("T")) {animals.add(new Tiger(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("L")) {animals.add(new Lion(player1, new Position(j, i), true));}
-                        if (newBoard[i][j].equals("E")) {animals.add(new Elephant(player1, new Position(j, i), true));}
-                        // Player2_right
-                        if (newBoard[i][j].equals("r")) {animals.add(new Rat(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("c")) {animals.add(new Cat(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("w")) {animals.add(new Wolf(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("d")) {animals.add(new Dog(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("p")) {animals.add(new Leopard(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("t")) {animals.add(new Tiger(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("l")) {animals.add(new Lion(new Position(j, i), true, player2));}
-                        if (newBoard[i][j].equals("e")) {animals.add(new Elephant(new Position(j, i), true, player2));}
+            String [][] newBoard = LoadSaveBoard.loadGame(file);
+            for (int i=0;i<9;i++){
+                for (int j=0;j<7;j++){
+                    // Player 1_left
+                    if (newBoard[i][j].equals("R")){animals.add(new Rat(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("C")){animals.add(new Cat(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("W")){animals.add(new Wolf(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("D")){animals.add(new Dog(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("P")){animals.add(new Leopard(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("T")){animals.add(new Tiger(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("L")){animals.add(new Lion(player1,new Position(j,i),true));}
+                    if (newBoard[i][j].equals("E")){animals.add(new Elephant(player1,new Position(j,i),true));}
+                    // Player2_right
+                    if (newBoard[i][j].equals("r")){animals.add(new Rat(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("c")){animals.add(new Cat(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("w")){animals.add(new Wolf(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("d")){animals.add(new Dog(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("p")){animals.add(new Leopard(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("t")){animals.add(new Tiger(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("l")){animals.add(new Lion(new Position(j,i),true,player2));}
+                    if (newBoard[i][j].equals("e")){animals.add(new Elephant(new Position(j,i),true,player2));}
 
-                    }
                 }
-
+            }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
             // add animals init position if error

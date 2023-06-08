@@ -54,7 +54,7 @@ public class BoardLocal extends BoardGui{
             @Override
             public void mouseReleased(MouseEvent e) {
                 boolean animalMoved = false;
-                Position movedPosition = new Position(e.getX() / carree, e.getY() / carree);
+                Position movedPosition = new Position(e.getX() / 64, e.getY() / 64);
 
 
                 try {
@@ -64,19 +64,14 @@ public class BoardLocal extends BoardGui{
                         if (p.equals(movedPosition)) {
                             selectedAnimal.move(movedPosition);
                             animalMoved = true;
-                            Display.hel+="Animal moved successfully.\n";
-                            Display.console.setText(Display.hel);
-                            //System.out.println();
+                            System.out.println("Animal moved successfully.");
                             possibleMoves.clear();
                             // Kill the Enemy's Animal Or End Game
                             for (Animal a : animals) {
                                 // Kill enemy
                                 if (selectedAnimal.getPosition().equals(a.getPosition()) && !a.getPlayer().isTurn()) {
                                     animals.remove(a);
-
-                                    Display.hel+="Animal killed \n";
-                                    Display.console.setText(Display.hel);
-                                    //System.out.println("Animal killed");
+                                    System.out.println("Animal killed");
                                     break;
                                 }
                             }
@@ -85,11 +80,9 @@ public class BoardLocal extends BoardGui{
                         }
                     }
                 }catch (NullPointerException ex){
-
-                    Display.hel+="No animal selected\n";
-                    Display.console.setText(Display.hel);
-                    //System.out.println("No animal selected");
+                    System.out.println("No animal selected");
                 }
+
 
                 if (animalMoved) {
                     changePlayer();
@@ -103,9 +96,7 @@ public class BoardLocal extends BoardGui{
 
                         playerWin.setScore(playerWin.getScore()+1);
                     }
-
                 }
-
                 selectedAnimal = null;
             }
 

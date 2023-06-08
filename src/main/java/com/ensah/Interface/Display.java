@@ -45,9 +45,6 @@ public class Display {
         pan.add(text);
         frame.add(pan);
 
-
-
-
         JPanel pan1 = new JPanel();
         pan1.setBackground(Color.decode("#212121"));
         pan1.setLayout(null);

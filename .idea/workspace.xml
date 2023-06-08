@@ -4,29 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="sound">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Winner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/media/Goal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/media/rever.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/media/trap2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/again.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mute.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/player1win.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/shadow/again.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/shadow/mute.png" afterDir="false" />
+    <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="checking...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueSingle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Reseau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardRandom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/media/river.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,21 +75,20 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\shadow" />
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\media" />
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\win" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\java\com\ensah\network" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\shadow" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
       <recent name="C:\Users\Microsoft\Desktop\01\java\XouDouQi\src\main\java\com\ensah\network" />
       <recent name="C:\Users\Microsoft\Desktop\01\java\XouDouQi\src\main\java\com\ensah\media" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
-      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\win" />
       <recent name="C:\Users\Microsoft\Desktop\XouDouQi\src\main\resources" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\reseau" />
       <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\menu" />
+      <recent name="D:\IdeaProjects\XouDouQi\src\main\resources\continue" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ensah.Interface" />
@@ -140,11 +127,6 @@
       <workItem from="1685698669631" duration="606000" />
       <workItem from="1685775538392" duration="5663000" />
       <workItem from="1685807698923" duration="24206000" />
-      <workItem from="1686152044433" duration="1811000" />
-      <workItem from="1686201401760" duration="150000" />
-      <workItem from="1686217639224" duration="14000" />
-      <workItem from="1686219744925" duration="221000" />
-      <workItem from="1686243024918" duration="5552000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1684270851869</created>
@@ -244,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686061240628</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="checking...">
+      <created>1686067292064</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686067292064</updated>
+    </task>
+    <task id="LOCAL-00016" summary="checking...">
+      <created>1686074507860</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686074507860</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +263,7 @@
     <MESSAGE value="moving animals" />
     <MESSAGE value="update" />
     <MESSAGE value="networking" />
-    <option name="LAST_COMMIT_MESSAGE" value="networking" />
+    <MESSAGE value="checking..." />
+    <option name="LAST_COMMIT_MESSAGE" value="checking..." />
   </component>
 </project>

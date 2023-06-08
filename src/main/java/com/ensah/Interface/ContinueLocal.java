@@ -68,7 +68,17 @@ public class ContinueLocal extends JPanel{
 
             public void mouseClicked(MouseEvent e){
                 if (button == newButton) {
-                    new Display();
+                    JFrame frame = new JFrame();
+                    frame.setSize(850, 612);
+                    frame.setResizable(false);
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                    boardLocal.addAnimals();
+                    frame.add(boardLocal);
+                    boardLocal.actions(frame);
+                    frame.setTitle("Xou Dou Qi game");
+                    frame.setVisible(true);
+
 
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(newButton);
                     currentFrame.dispose();
