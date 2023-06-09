@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc144471-21d7-4b3f-b2c3-829f3850e7c2" name="Changes" comment="checking...">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardAlgo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/Evaluation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/MoveAlgo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2023_18_56__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2023_18_56__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2023_19_02__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2023_19_02__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2023_19_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_06_2023_19_28__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/ContinueLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Interface/Modes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/BoardServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/board/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ensah/utils/loadBoard.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ensah/utils/loadBoard.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686074507860</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="checking...">
+      <created>1686278379388</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686278379388</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
