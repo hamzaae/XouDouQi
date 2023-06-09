@@ -66,13 +66,7 @@ public class Modes extends JPanel {
             public void mouseClicked(MouseEvent e){
                 if (button == easyButton) {
                     JFrame frame = new JFrame("EASY");
-                    frame.setSize( 800, 612);
-                    frame.setResizable(false);
-                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                    JPanel pan = new JPanel();
-                    pan.setBackground(Color.black);
-                    pan.setBounds(64*7,0,800-64*7,612);
-                    frame.add(pan);
+                    Display dis=new Display(frame);
                     BoardRandom boardRandom = new BoardRandom(new Player("1",false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                     boardRandom.addAnimals();
                     frame.add(boardRandom);
