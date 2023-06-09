@@ -175,6 +175,67 @@ public abstract class BoardGui extends JPanel {
         return null;
     }
 
+    // Player's animals list only
+    public static ArrayList<Animal> getAnimalsPlayer(Player player){
+        ArrayList<Animal> playerPieces = new ArrayList<>();
+        for (int row=0;row<9;row++){
+            for (int p=0;p<7;p++){
+                for (Animal animal:animals){
+                    if (animal.getPlayer().equals(player) && animal.getPosition().equals(new Position(p,row))){
+                        playerPieces.add(animal);
+                        break;
+                    }
+                }
+            }
+        }
+        return playerPieces;
+    }
+
+    // Get the board
+    public static ArrayList<Animal> getBoardCurrent(){
+        Animal a;
+        ArrayList<Animal> playerPieces = new ArrayList<>();
+        for (int row=0;row<9;row++){
+            for (int p=0;p<7;p++){
+                a=null;
+                for (Animal animal:animals){
+                    if (animal.getPosition().equals(new Position(p,row))){
+                        a = animal;
+                        playerPieces.add(animal);
+                        break;
+                    }
+                }
+                if (a==null){
+                    playerPieces.add(null);
+                }
+            }
+        }
+        return playerPieces;
+    }
+
+    // Get the board with only one player's animals
+    public static ArrayList<Animal> getBoardPlayer(){
+        Animal a;
+        ArrayList<Animal> playerPieces = new ArrayList<>();
+        for (int row=0;row<9;row++){
+            for (int p=0;p<7;p++){
+                a=null;
+                for (Animal animal:animals){
+                    if (animal.getPosition().equals(new Position(p,row))){
+                        a = animal;
+                        playerPieces.add(animal);
+                        break;
+                    }
+                }
+                if (a==null){
+                    playerPieces.add(null);
+                }
+            }
+        }
+        return playerPieces;
+    }
+
+
     public abstract void actions(JFrame frame);
     public static void Test1(String name) {
         String fileName = "frame_names.txt";

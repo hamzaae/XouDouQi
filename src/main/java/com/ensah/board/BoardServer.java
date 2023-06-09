@@ -85,22 +85,6 @@ public class BoardServer extends BoardGui{
                                     break;
                                 }
                             }
-                            // End game
-                            Player playerWin;
-                            playerWin = endGame();
-
-
-
-                            if (playerWin.equals(player1)){
-                                //frame u lost
-                            }
-                            else if (playerWin.equals(player2)){
-                                //u win
-                            }
-                            if (playerWin != null) {
-                                // TODO
-                                playerWin.setScore(playerWin.getScore()+1);
-                            }
                             break;
 
                         }

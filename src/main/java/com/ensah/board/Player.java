@@ -16,11 +16,10 @@ public class Player {
         this.username = username;
         this.turn = turn;
     }
-    public Player (String username,int score,boolean turn,int animallife){
-        this.username=username;
-        this.score=score;
-        this.turn=turn;
-        this.animallife=animallife;
+
+    public Player (Player player){
+        this.username= player.getUsername();
+        this.turn= player.isTurn();
     }
 
     public int getAnimallife() {

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public abstract class Animal {
+public class Animal {
     protected String name;
     protected int power;
     protected Position position;
@@ -37,7 +37,14 @@ public abstract class Animal {
             throw new RuntimeException(e);
         }
 
+    }
 
+    public Animal(Animal animal) {
+        this.name= animal.getName();
+        this.power= animal.getPower();
+        this.position=new Position(animal.getPosition());
+        this.isAlive=animal.isAlive;
+        this.player=new Player(animal.getPlayer());
     }
 
     //the left constructor;
@@ -87,7 +94,9 @@ public abstract class Animal {
     }
 
 
-    public abstract void move(Position position);
+    public void move(Position position){
+
+    };
 
 
     public ArrayList<Position> checkMovements(Animal animal) {

@@ -12,6 +12,9 @@ import com.ensah.board.BoardLocal;
 import com.ensah.board.BoardRandom;
 import com.ensah.board.Player;
 
+import com.ensah.board.BoardLocal;
+import com.ensah.board.Player;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

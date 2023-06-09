@@ -1,5 +1,6 @@
 package com.ensah.Interface;
 
+import com.ensah.board.BoardGui;
 import com.ensah.utils.LoadSaveBoard;
 
 import javax.swing.*;
@@ -55,7 +56,7 @@ public class Display {
                 }
                 if (button == saveButton) {
                     try {
-                        LoadSaveBoard.loadGame("src\\main\\java\\com\\ensah\\utils\\loadBoard.txt");
+                        LoadSaveBoard.saveGame(BoardGui.getBoardCurrent(),"src\\main\\java\\com\\ensah\\utils\\loadBoard.txt");
                     } catch (FileNotFoundException ex) {
                         throw new RuntimeException(ex);
                     }

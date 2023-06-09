@@ -1,6 +1,5 @@
 package com.ensah.Interface;
 
-import com.ensah.board.BoardGui;
 import com.ensah.board.BoardRandom;
 import com.ensah.board.Player;
 
@@ -19,7 +18,7 @@ public class Modes extends JPanel {
     private final JButton easyButton,mediumButton,hardButton;
     private final JButton homeButton,infoButton,exitButton;
 
-    public static String  FrameName,frame;
+
     public Modes() {
         loadBackgroundImage();
 
@@ -66,16 +65,22 @@ public class Modes extends JPanel {
 
             public void mouseClicked(MouseEvent e){
                 if (button == easyButton) {
-                    JFrame frame = new JFrame("XOU DOU QI EASY");
-                    Display dis=new Display(frame);
-
+                    JFrame frame = new JFrame("EASY");
+                    frame.setSize( 800, 612);
+                    frame.setResizable(false);
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JPanel pan = new JPanel();
+                    pan.setBackground(Color.black);
+                    pan.setBounds(64*7,0,800-64*7,612);
+                    frame.add(pan);
                     BoardRandom boardRandom = new BoardRandom(new Player("1",false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                     boardRandom.addAnimals();
                     frame.add(boardRandom);
                     boardRandom.actions(frame);
-                    BoardGui.Test1(frame.getTitle());
+
                     frame.setVisible(true);
-                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(easyButton);
                     currentFrame.dispose();
 

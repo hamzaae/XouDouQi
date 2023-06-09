@@ -57,7 +57,6 @@ public class BoardLocal extends BoardGui{
                 boolean animalMoved = false;
                 Position movedPosition = new Position(e.getX() / 64, e.getY() / 64);
 
-
                 try {
                     possibleMoves = getMovedAnimalPossibleMoves(selectedAnimal);
 
