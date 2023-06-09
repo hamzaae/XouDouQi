@@ -1,6 +1,6 @@
 package com.ensah.board;
 
-import com.ensah.Interface.Display;
+import com.ensah.Interface.Winner;
 import com.ensah.animals.Animal;
 
 import javax.swing.*;
@@ -10,6 +10,7 @@ import java.awt.event.MouseMotionListener;
 
 
 public class BoardLocal extends BoardGui{
+
 
     public BoardLocal(Player player1, Player player2, String file){
         super(player1, player2, file);
@@ -90,10 +91,25 @@ public class BoardLocal extends BoardGui{
                     // End game
                     playerWin = endGame();
                     if (playerWin != null) {
-                        // TODO
+                        if (playerWin.equals(player1)){
+                            JFrame winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/player1win.png"));
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                        }
+                        else if (playerWin.equals(player2)){
+                            JFrame winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/player2win.png"));
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                        }
                         player1.setTurn(false);
                         player2.setTurn(false);
-
+                        frame.dispose();
                         playerWin.setScore(playerWin.getScore()+1);
                     }
                 }

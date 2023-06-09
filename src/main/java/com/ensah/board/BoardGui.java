@@ -7,9 +7,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public abstract class BoardGui extends JPanel {
@@ -23,12 +21,14 @@ public abstract class BoardGui extends JPanel {
     static final int carree=64;
 
 
+
     public BoardGui(Player player1, Player player2, String file){
         this.setPreferredSize(new Dimension(7*64,9*64));
         BoardGui.player1 = player1;
         BoardGui.player2 = player2;
         this.file = file;
     }
+
 
     public void paintComponent(Graphics g){
         Graphics2D g2D = (Graphics2D) g;
@@ -40,11 +40,9 @@ public abstract class BoardGui extends JPanel {
             throw new RuntimeException(e);
 
         }
-
-
         Image river;
         try {
-            river = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\river1.png")).getScaledInstance(carree*2, carree*3, BufferedImage.SCALE_SMOOTH);
+            river = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\river.png")).getScaledInstance(carree*2, carree*3, BufferedImage.SCALE_SMOOTH);
             g.drawImage(river, carree, 3*carree, this);
             g.drawImage(river, 4*carree, 3*carree, this);
         } catch (IOException e) {
@@ -55,20 +53,25 @@ public abstract class BoardGui extends JPanel {
         // Drawing board squares
         for (int y = 0; y < 9; y++) {
             for (int x = 0; x < 7; x++) {
-                if((x==1||x==2||x==4||x==5)&&(y==3||y==4||y==5)) {
-                    g2D.setColor(new Color(35, 147, 200));
-                    g2D.fillRect(x * carree, y * carree, carree, carree);
-                }
                 if (((x==2||x==4)&&(y==0||y==8))||((y==1||y==7)&&x==3)) {
-                    g2D.setColor(new Color(182, 109, 109));
-                    g2D.fillRect(x * carree, y * carree, carree, carree);
+                    Image trap;
+                    try {
+                        trap = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\trap2.png")).getScaledInstance(carree, carree, BufferedImage.SCALE_SMOOTH);
+                        g.drawImage(trap,x* carree, y*carree, this);
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
                 if (x==3&&(y==0||y==8)) {
-                    g2D.setColor(new Color(84, 84, 84, 100));
-                    g2D.fillRect(x * carree, y * carree, carree, carree);
-
+                    Image Goal;
+                    try {
+                        Goal = ImageIO.read(new File("src\\main\\java\\com\\ensah\\media\\Goal.png")).getScaledInstance(carree, carree, BufferedImage.SCALE_SMOOTH);
+                        g.drawImage(Goal, x*carree, y*carree, this);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-
             }
         }
         g2D.setColor(Color.BLACK);
@@ -82,15 +85,13 @@ public abstract class BoardGui extends JPanel {
 
         // Highlighting possible moves
         if (selectedAnimal != null) {
-            g2D.setColor(new Color(68, 180, 57, 140));
+            g2D.setColor(new Color(188,57,93,72));
             for (Position p : this.getMovedAnimalPossibleMoves(selectedAnimal)) {
                 int r = p.getI();
                 int c = p.getJ();
                 g2D.fillRect(r * carree, c * carree, carree, carree);
             }
         }
-
-
 
         // Drawing animals
         for (Animal animal : animals) {
@@ -102,6 +103,9 @@ public abstract class BoardGui extends JPanel {
 
     public void addAnimals(){
         try {
+            if (!animals.isEmpty()){
+                animals.clear();
+            }
             String [][] newBoard = LoadSaveBoard.loadGame(file);
             for (int i=0;i<9;i++){
                 for (int j=0;j<7;j++){
@@ -163,16 +167,31 @@ public abstract class BoardGui extends JPanel {
 
     public Player endGame(){
         if(selectedAnimal.getPosition().equals(new Position(3,8)) && selectedAnimal.getPlayer().getUsername().equals("1")){
-            System.out.println("CheckMate P1 wins");
             return player1;
         }
         if(selectedAnimal.getPosition().equals(new Position(3,0)) && selectedAnimal.getPlayer().getUsername().equals("2")){
-            System.out.println("CheckMate P2 wins");
             return player2;
         }
         return null;
     }
 
     public abstract void actions(JFrame frame);
+    public static void Test1(String name) {
+        String fileName = "frame_names.txt";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            writer.write(name + System.lineSeparator());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    public static String read(String file) {
+        String line = null;
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            line = reader.readLine();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return line;
+    }
 
 }

@@ -43,7 +43,7 @@ public class Menu extends JPanel {
         add(infoButton);
         add(exitButton);
 
-        // Set the preferred size of the panel to match the background image size
+
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
         isPlaying = false;
         try {
@@ -88,8 +88,6 @@ public class Menu extends JPanel {
 
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(singleButton);
                     currentFrame.dispose();
-
-
 
                 }
                 if (button == localButton) {

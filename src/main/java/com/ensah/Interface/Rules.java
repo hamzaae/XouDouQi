@@ -63,47 +63,10 @@ public class Rules extends JPanel {
         }
     }
 
-
-
-
-
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(background, 0, 0, null);
     }
 }
-/*
 
-    JFrame frame = new JFrame("Game rules");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(new com.ensah.Interface.Rules());
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
-
-
-    private void loadBackgroundImage() {
-        try {
-            background = ImageIO.read(Objects.requireNonNull(Rules.class.getResourceAsStream("/rules.png")));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(background, 0, 0, null);
-    }
-
-}
-
- */

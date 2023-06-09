@@ -6,6 +6,7 @@ public class BoardClient {
  */
 package com.ensah.board;
 
+import com.ensah.Interface.Winner;
 import com.ensah.animals.Animal;
 
 
@@ -118,17 +119,32 @@ public class BoardClient extends BoardGui{
                     clientProg.send(line);
                     // End game
                     playerWin = endGame();
+
                     if (playerWin != null) {
-                        // TODO
+                        if (playerWin.equals(player1)){
+                            JFrame winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/Uwin.png"));
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                        }else if (playerWin.equals(player2)) {
+                            JFrame winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/Ulost.png"));
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                        }
                         player1.setTurn(false);
                         player2.setTurn(false);
-
+                        frame.dispose();
                         playerWin.setScore(playerWin.getScore()+1);
                     }
 
-                    selectedAnimal = null;
-                    frame.repaint();
                 }
+                selectedAnimal = null;
+                frame.repaint();
             }
 
 

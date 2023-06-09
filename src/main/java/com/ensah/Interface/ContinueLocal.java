@@ -7,6 +7,11 @@ public class ContinueLocal {
  */
 package com.ensah.Interface;
 
+import com.ensah.board.BoardGui;
+import com.ensah.board.BoardLocal;
+import com.ensah.board.BoardRandom;
+import com.ensah.board.Player;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -68,28 +73,35 @@ public class ContinueLocal extends JPanel{
 
             public void mouseClicked(MouseEvent e){
                 if (button == newButton) {
-                    JFrame frame = new JFrame();
-                    frame.setSize(850, 612);
-                    frame.setResizable(false);
-                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JFrame frame = new JFrame("XOU DOU QI LOCAL");
+                    Display dis=new Display(frame);
+
                     BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                     boardLocal.addAnimals();
                     frame.add(boardLocal);
                     boardLocal.actions(frame);
-                    frame.setTitle("Xou Dou Qi game");
                     frame.setVisible(true);
-
+                    BoardGui.Test1(frame.getTitle());
 
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(newButton);
                     currentFrame.dispose();
                 }
                 if (button == ContinueButton) {
+
+                    JFrame frame = new JFrame("XOU DOU QI CONTINUE");
+                    Display dis=new Display(frame);
+                    BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\loadBoard.txt");
+                    boardLocal.addAnimals();
+                    frame.add(boardLocal);
+                    boardLocal.actions(frame);
+                    frame.setVisible(true);
+                    BoardGui.Test1(frame.getTitle());
+
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(ContinueButton);
                     currentFrame.dispose();
 
                 }
                 if (button == homeButton) {
-
                     JFrame frame = new JFrame("Xou DOU qi");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.getContentPane().add(new Menu());

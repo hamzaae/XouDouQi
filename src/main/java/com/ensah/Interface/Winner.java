@@ -1,6 +1,9 @@
 
 package com.ensah.Interface;
 
+import com.ensah.board.*;
+import com.ensah.network.ServerApp;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -13,6 +16,7 @@ import java.util.Objects;
 
 public class Winner extends JPanel {
     private BufferedImage background;
+    public static ServerApp server;
 
     private final JButton homeButton,againButton,exitButton;
 
@@ -36,18 +40,12 @@ public class Winner extends JPanel {
         // Set the preferred size of the panel to match the background image size
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
 
-    }
 
-    public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Xou DOU qi");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(new Winner("/player1win.png"));
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
 
     }
+
+
 
     private void loadBackgroundImage(String path) {
         try {
@@ -68,9 +66,8 @@ public class Winner extends JPanel {
 
         button.addMouseListener(new MouseAdapter() {
 
-            public void mouseClicked(MouseEvent e){
+            public void mouseClicked(MouseEvent e) {
                 if (button == homeButton) {
-
                     JFrame frame = new JFrame("Xou DOU qi");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.getContentPane().add(new com.ensah.Interface.Menu());
@@ -79,22 +76,63 @@ public class Winner extends JPanel {
                     frame.setVisible(true);
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(homeButton);
                     currentFrame.dispose();
-
                 }
                 if (button == againButton) {
-                    //String frameName = frame.getTitle();
-                    //System.out.println("Closed Frame: " + frameName);
-                    //if
-                    System.out.println("again");
+                    if (BoardGui.read("frame_names.txt").equals("XOU DOU QI LOCAL")) {
+                        JFrame frame = new JFrame();
+                        Display dis=new Display(frame);
+                        BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                        boardLocal.addAnimals();
+                        frame.add(boardLocal);
+                        boardLocal.actions(frame);
+                        frame.setVisible(true);
+                    }
+                    if (BoardGui.read("frame_names.txt").equals("XOU DOU QI EASY")) {
+                        JFrame frame = new JFrame();
+                        Display dis=new Display(frame);
+                        BoardRandom boardRandom = new BoardRandom(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                        boardRandom.addAnimals();
+                        frame.add(boardRandom);
+                        boardRandom.actions(frame);
+                        frame.setVisible(true);
+                        JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
+                        currentFrame.dispose();
+                    }
+
+                     if (BoardGui.read("frame_names.txt").equals("XOU DOU QI S")) {
+                        try {
+                                server = new ServerApp();
+                            JFrame frame = new JFrame("XOU DOU QI S");
+                            Display dis=new Display(frame);
+                            BoardServer boardServer = new BoardServer(new Player("1", true), new Player("2", false), frame, "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                            boardServer.addAnimals();
+                            frame.add(boardServer);
+                            boardServer.actions(frame);
+                            frame.setVisible(true);
+                            } catch (Exception ex) {
+                                throw new RuntimeException(ex);
+                            }
+                         }
+                    if (BoardGui.read("frame_names.txt").equals("XOU DOU QI C")){
+                        String ipAdresse=JOptionPane.showInputDialog("Please entrer the game's host IP  ");
+                        JFrame frame = new JFrame("XOU DOU QI C");
+                        Display dis=new Display(frame);
+                        BoardClient boardClient = new BoardClient(new Player("1",false), new Player("2", false), ipAdresse, frame,"src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                        boardClient.addAnimals();
+                        frame.add(boardClient);
+                        boardClient.actions(frame);
+                        frame.setVisible(true);
+                    }
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
+                    currentFrame.dispose();
+
 
                 }
 
+                if (button == exitButton) System.exit(0);}
 
-                if (button == exitButton) {
-                    System.exit(0);
 
-                }
-            }
+
 
 
             @Override
@@ -127,17 +165,12 @@ public class Winner extends JPanel {
             }
         });
 
-
-
         return button;
     }
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(background, 0, 0, null);
     }
-
-
 
 }

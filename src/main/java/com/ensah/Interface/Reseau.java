@@ -73,14 +73,8 @@ public class Reseau extends JPanel{
                 if (button == createButton) {
                     try {
                         server = new ServerApp();
-                        JFrame frame = new JFrame();
-                        frame.setSize( 800, 612);
-                        frame.setResizable(false);
-                        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                        JPanel pan = new JPanel();
-                        pan.setBackground(Color.black);
-                        pan.setBounds(64*7,0,800-64*7,612);
-                        frame.add(pan);
+                        JFrame frame = new JFrame("XOU DOU QI S");
+                        Display dis=new Display(frame);
                         BoardServer boardServer = new BoardServer(new Player("1",true), new Player("2", false), frame,"src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                         boardServer.addAnimals();
                         frame.add(boardServer);
@@ -98,19 +92,15 @@ public class Reseau extends JPanel{
                 if (button == JoinButton) {
                     String ipAdresse=JOptionPane.showInputDialog("Please entrer the game's host IP  ");
 
-                    JFrame frame = new JFrame();
-                    frame.setSize( 800, 612);
-                    frame.setResizable(false);
-                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-                    JPanel pan = new JPanel();
-                    pan.setBackground(Color.black);
-                    pan.setBounds(64*7,0,800-64*7,612);
-                    frame.add(pan);
+                    JFrame frame = new JFrame("XOU DOU QI C");
+                    Display dis=new Display(frame);
+
                     BoardClient boardClient = new BoardClient(new Player("1",false), new Player("2", false), ipAdresse, frame,"src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                     boardClient.addAnimals();
                     frame.add(boardClient);
                     boardClient.actions(frame);
                     frame.setVisible(true);
+
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(JoinButton);
                     currentFrame.dispose();
 

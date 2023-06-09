@@ -1,5 +1,9 @@
 package com.ensah.Interface;
 
+import com.ensah.board.BoardGui;
+import com.ensah.board.BoardLocal;
+import com.ensah.board.Player;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -72,7 +76,14 @@ public class ContinueSingle extends JPanel{
                     currentFrame.dispose();
                 }
                 if (button == ContinueButton) {
-
+                    JFrame frame = new JFrame("XOU DOU QI CONTINUE");
+                    Display dis=new Display(frame);
+                    BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\loadBoard.txt");
+                    boardLocal.addAnimals();
+                    frame.add(boardLocal);
+                    boardLocal.actions(frame);
+                    frame.setVisible(true);
+                    BoardGui.Test1(frame.getTitle());
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(ContinueButton);
                     currentFrame.dispose();
 

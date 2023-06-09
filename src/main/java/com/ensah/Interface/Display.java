@@ -1,83 +1,101 @@
 package com.ensah.Interface;
 
-import com.ensah.board.BoardGui;
-import com.ensah.board.BoardLocal;
-import com.ensah.board.Player;
+import com.ensah.utils.LoadSaveBoard;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.FileNotFoundException;
+import java.util.Objects;
 
 public class Display {
-    public static String str = "";
+    private final JButton homeButton, saveButton, exitButton;
 
-    public static String hel;
-    public static JTextPane console, text;
-
-    public Display() {
-        JFrame frame = new JFrame();
-        frame.setSize(850, 612);
+    public Display(JFrame frame) {
+        frame.setSize(460, 700);
         frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        BoardLocal boardLocal = new BoardLocal(new Player("1", false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
-        boardLocal.addAnimals();
-        frame.add(boardLocal);
-        boardLocal.actions(frame);
-        frame.setTitle("Xou Dou Qi game");
-        frame.setVisible(true);
-    }
-}
-        /*
         JPanel pan = new JPanel();
-        pan.setBackground(Color.pink);
-        pan.setLayout(null);
-        pan.setBounds(64 * 7, 0, 850 - (64 * 7), 120);
-        Font font=new Font("Cambria",Font.BOLD,14);
+        pan.setBounds(0, 575, 460, 200);
+        pan.setBackground(Color.decode("#683612"));
+        pan.setLayout(new FlowLayout());
 
-        text = new JTextPane();
-        text.setBackground(Color.decode("#212121"));
-        text.setBounds(0, 0, 850 - (64 * 7), 120);
-        text.setForeground(Color.WHITE);
-        //text.setText("------------------ J U N G L E  G A M E ---------------- \n\n" + BoardGUI.word + "PLAYER 1 :\n \n" + "PLAYER 2 : \n\n");
-        text.setFont(font);
-        text.setEditable(false);
-        pan.add(text);
+        frame.setLocationRelativeTo(null);
+
+        homeButton = createButton("/home.png", 0, 0, 32, 32);
+        saveButton = createButton("/save.png", 0, 0, 32, 32);
+        exitButton = createButton("/exit.png", 0, 0, 32, 32);
+        pan.add(homeButton);
+        pan.add(saveButton);
+        pan.add(exitButton);
         frame.add(pan);
+    }
 
-        JPanel pan1 = new JPanel();
-        pan1.setBackground(Color.decode("#212121"));
-        pan1.setLayout(null);
-        pan1.setBounds(64 * 7, 100, 850 - (64* 7), 480);
-        frame.add(pan1);
+    private JButton createButton(String imagePath, int x, int y, int width, int height) {
+        JButton button = new JButton();
+        button.setIcon(new ImageIcon(Objects.requireNonNull(Display.class.getResource(imagePath))));
+        button.setBounds(x, y, width, height);
+        button.setOpaque(false);
+        button.setContentAreaFilled(false);
+        button.setFocusPainted(false);
+        button.setBorder(new EmptyBorder(0, 0, 0, 0));
 
-        console= new JTextPane();
-        console.setBackground(Color.decode("#212121"));
-        console.setForeground(Color.white);
-        console.setBounds(20, 0, 850 - (64 * 7), 480); // Set the size and position of the JTextPane
-        hel = "\n";
-        console.setText(hel);
-        console.setEditable(false);
-        console.setFont(font);
-        pan1.add(console);
-        JScrollPane sp = new JScrollPane(console);
-        sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        sp.setBorder(new EmptyBorder(0,0,0,0));
-        sp.setBounds(0, 0, 850 - (64 * 7), 480); // Set the size and position of the JScrollPane
-        pan1.add(sp);
+        button.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                if (button == homeButton) {
+                    JFrame frame = new JFrame("Xou DOU qi");
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.getContentPane().add(new com.ensah.Interface.Menu());
+                    frame.pack();
+                    frame.setLocationRelativeTo(null);
+                    frame.setVisible(true);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(homeButton);
+                    currentFrame.dispose();
+                }
+                if (button == saveButton) {
+                    try {
+                        LoadSaveBoard.loadGame("src\\main\\java\\com\\ensah\\utils\\loadBoard.txt");
+                    } catch (FileNotFoundException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
 
-         */
-
-
-
-    /*
-    public static void updateText() {
-        String str = "------------------ J U N G L E  G A M E ---------------- \n\n";
-        str += BoardGUI.word + "PLAYER 1 :\n \n";
-        str += BoardGUI.word + "PLAYER 2 : \n\n";
-        text.setText(str);
-
-     */
+                if (button == exitButton) {
+                    System.exit(0);
+                }
+            }
 
 
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (button == exitButton) {
+                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/exit.png"))));
+                }
+                if (button == homeButton) {
+                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/home.png"))));
+                }
+                if (button == saveButton) {
+                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/shadow/save.png"))));
+                }
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (button == exitButton) {
+                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/exit.png"))));
+                }
+                if (button == homeButton) {
+                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/home.png"))));
+                }
+
+                if (button == saveButton) {
+                    button.setIcon(new ImageIcon(Objects.requireNonNull(Menu.class.getResource("/save.png"))));
+                }
+            }
+        });
+
+
+        return button;
+    }}

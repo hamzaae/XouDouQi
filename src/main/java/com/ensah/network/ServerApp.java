@@ -1,5 +1,6 @@
 package com.ensah.network;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -17,10 +18,10 @@ public class ServerApp {
 
 	public ServerApp() throws Exception {
 		serverSocket = new ServerSocket(port);
-
-		System.out.println("Server started");
+		JOptionPane.showMessageDialog(null,"Server started. Waiting for the player... ");
 
 		clientSocket = serverSocket.accept();
+
 		System.out.println("Client connected!");
 
 	}
