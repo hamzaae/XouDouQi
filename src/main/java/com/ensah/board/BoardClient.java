@@ -128,6 +128,7 @@ public class BoardClient extends BoardGui{
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+
                         }else if (playerWin.equals(player2)) {
                             JFrame winFrame = new JFrame("Xou DOU qi");
                             winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

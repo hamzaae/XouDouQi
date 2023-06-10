@@ -23,9 +23,9 @@ public class Winner extends JPanel {
 
     public Winner(String path) {
         loadBackgroundImage(path);
-        setLayout(null); // Use null layout for custom positioning of components
+        setLayout(null);
 
-        // Create  buttons with images
+
 
         homeButton = createButton("/home.png",185, 300, 32, 32);
         againButton =createButton("/again.png",230, 300, 32, 32);
@@ -102,29 +102,34 @@ public class Winner extends JPanel {
                      if (BoardGui.read("frame_names.txt").equals("XOU DOU QI S")) {
                         try {
                                 server = new ServerApp();
-                            JFrame frame = new JFrame("XOU DOU QI S");
+                            JFrame frame = new JFrame();
                             Display dis=new Display(frame);
                             BoardServer boardServer = new BoardServer(new Player("1", true), new Player("2", false), frame, "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                             boardServer.addAnimals();
                             frame.add(boardServer);
                             boardServer.actions(frame);
                             frame.setVisible(true);
+                            JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
+                            currentFrame.dispose();
+
                             } catch (Exception ex) {
                                 throw new RuntimeException(ex);
                             }
                          }
                     if (BoardGui.read("frame_names.txt").equals("XOU DOU QI C")){
                         String ipAdresse=JOptionPane.showInputDialog("Please entrer the game's host IP  ");
-                        JFrame frame = new JFrame("XOU DOU QI C");
+                        JFrame frame = new JFrame();
                         Display dis=new Display(frame);
+
                         BoardClient boardClient = new BoardClient(new Player("1",false), new Player("2", false), ipAdresse, frame,"src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                         boardClient.addAnimals();
                         frame.add(boardClient);
                         boardClient.actions(frame);
                         frame.setVisible(true);
+                        JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
+                        currentFrame.dispose();
                     }
-                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
-                    currentFrame.dispose();
+
 
 
                 }
