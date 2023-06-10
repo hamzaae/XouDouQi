@@ -43,7 +43,6 @@ public class Animal {
         this.name= animal.getName();
         this.power= animal.getPower();
         this.position=new Position(animal.getPosition());
-        this.isAlive=animal.isAlive;
         this.player=new Player(animal.getPlayer());
     }
 

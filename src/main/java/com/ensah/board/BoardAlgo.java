@@ -120,11 +120,11 @@ public class BoardAlgo extends BoardGui{
         int score = 0;
         for (Animal animal : board) {
             if (animal != null) {
-                if (animal.getPlayer().equals(player1)) {
+                if (animal.getPlayer().getUsername().equals("1")) {
                     score += 1;
                     score += animal.getPower();
                 }
-                if (animal.getPlayer().equals(player2)) {
+                if (animal.getPlayer().getUsername().equals("2")) {
                     score -= 1;
                     score -= animal.getPower();
                 }
@@ -205,7 +205,6 @@ public class BoardAlgo extends BoardGui{
         // Create a new ArrayList to hold the updated board after the move
         ArrayList<Animal> updatedBoard = new ArrayList<>(tempBoard);
 
-        System.out.println("Before: " + animal.getName() + animal.getPosition());
         // Find the index of the animal in the board by comparing positions
         int animalIndex = -1;
         Animal currentAnimal = null;
@@ -216,13 +215,11 @@ public class BoardAlgo extends BoardGui{
                 break;
             }
         }
-        System.out.println("Animal Index: " + animalIndex);
 
         if (animalIndex != -1) {
-            System.out.println("zzzzzzzzzz");
 
             // Get the current position of the animal
-            Position currentPosition = updatedBoard.get(animalIndex).getPosition();
+            //Position currentPosition = updatedBoard.get(animalIndex).getPosition();
 
             // Calculate the target index in the updatedBoard based on the new position
             int targetIndex = (position.getJ() * 7) + position.getI();
@@ -236,12 +233,17 @@ public class BoardAlgo extends BoardGui{
 
             // Swap the animal's position with the target position
             updatedBoard.set(animalIndex, null);
-            updatedBoard.set(targetIndex, animal);
+            currentAnimal.setPosition(position);
+            updatedBoard.set(targetIndex, currentAnimal);
+
+            //System.out.println("Before: "+currentAnimal.getName()+currentAnimal.getPosition());
 
             // Update the animal's position
-            currentAnimal.setPosition(position);
+            //System.out.println("After: "+currentAnimal.getName()+currentAnimal.getPosition());
 
-            System.out.println("After: " + currentAnimal.getName() + currentAnimal.getPosition());
+            while (updatedBoard.remove(null)) {
+            }
+
 
         }
 
@@ -254,6 +256,7 @@ public class BoardAlgo extends BoardGui{
         int maxEval = -10000;
         int currEval = evaluate(board);
         ArrayList<Animal> bestMove = null;
+        ArrayList<ArrayList<Animal>> allMoves = new ArrayList<>();
 
         for (Animal animal : getAnimalsPlayer(player1)) {
             for (Position position : getMovedAnimalPossibleMoves(animal)) {
@@ -271,10 +274,9 @@ public class BoardAlgo extends BoardGui{
 
                 // Simulate the move
                 tempBoard = simulateMove(animal, position, tempBoard);
+                allMoves.add(tempBoard);
 
                 int evaluation = evaluate(tempBoard);
-                System.out.println("Evaaaaaal: "+evaluation);
-                System.out.println("MaxxxxEvaaaaaal: "+maxEval);
                 if (evaluation > maxEval) {
                     maxEval = evaluation;
                     bestMove = tempBoard;
@@ -284,30 +286,52 @@ public class BoardAlgo extends BoardGui{
 
         if (maxEval != currEval) {
             System.out.println("Board changes");
+            while (bestMove.remove(null)) {
+            }
+            //System.out.println(bestMove);
+            /*for (Animal animal:animals){
+                //assert bestMove!=null;
+                for (Animal newAnimal:bestMove){
+                    if (newAnimal!=null && newAnimal.getPosition() != animal.getPosition()){
+                        System.out.println("okkkkkkkkkk");
+                        animal.setPosition(newAnimal.getPosition());
+                        //System.out.println("BBBBBBBefore: " + animal.getName()+ animal.getPosition());
+                        System.out.println("newAnimal: "+ newAnimal.getName());
+                        System.out.println(newAnimal.getPosition().getI());
+                        System.out.println(newAnimal.getPosition().getJ());
+                        animal.getPosition().setY(newAnimal.getPosition().getJ());
+                        animal.getPosition().setX(newAnimal.getPosition().getI());
+                        System.out.println("animal: "+ animal.getName());
+                        System.out.println(animal.getPosition().getI());
+                        System.out.println(animal.getPosition().getJ());
+                        //System.out.println("AAAAAAAfter: " +  animal.getName()+ animal.getPosition());
 
-            // Create a separate list to hold the animals that need to be updated
-            ArrayList<Animal> animalsToUpdate = new ArrayList<>();
-
-            for (Animal animal : animals) {
-                for (Animal copyA : bestMove) {
-                    if (copyA != null && copyA.getPlayer().getUsername().equals(animal.getPlayer().getUsername()) && copyA.getName().equals(animal.getName())) {
-                        animalsToUpdate.add(animal);
+                    }
+                }
+            }*/
+            for (Animal animal:animals){
+                for (Animal newAnimal:bestMove){
+                    if (animal.getName().equals(newAnimal.getName()) && animal.getPlayer().getUsername().equals(newAnimal.getPlayer().getUsername())){
+                        if (animal.getPosition().getI()==newAnimal.getPosition().getI() && animal.getPosition().getJ()==newAnimal.getPosition().getJ()){
+                            bestMove.set(bestMove.indexOf(newAnimal), animal);
+                        }else{
+                            animal.setPosition(newAnimal.getPosition());
+                            bestMove.set(bestMove.indexOf(newAnimal), animal);
+                        }
                         break;
                     }
                 }
             }
-
-            // Update the positions in the bestMove list using the animalsToUpdate list
-            for (int i = 0; i < animalsToUpdate.size(); i++) {
-                Animal currentAnimal = animalsToUpdate.get(i);
-                Animal newAnimal = bestMove.get(i);
-                if (newAnimal != null) {
-                    newAnimal.setPosition(currentAnimal.getPosition());
-                }
+            for (Animal animal:bestMove){
+                System.out.println(animal.getName()+animal.getPosition()+animal.getPlayer().getUsername());
             }
+            System.out.println(bestMove);
+            animals=bestMove;
+
+
         }else {
             System.out.println("No changes");
-            //randomPlayer();
+            randomPlayer();
         }
 
 

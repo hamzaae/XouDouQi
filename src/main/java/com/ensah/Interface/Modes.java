@@ -1,5 +1,6 @@
 package com.ensah.Interface;
 
+import com.ensah.board.BoardAlgo;
 import com.ensah.board.BoardRandom;
 import com.ensah.board.Player;
 
@@ -87,6 +88,24 @@ public class Modes extends JPanel {
                 }
                 if (button == mediumButton) {
                     System.out.println("the second buttom");
+                    JFrame frame = new JFrame("EASY");
+                    frame.setSize( 800, 612);
+                    frame.setResizable(false);
+                    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                    JPanel pan = new JPanel();
+                    pan.setBackground(Color.black);
+                    pan.setBounds(64*7,0,800-64*7,612);
+                    frame.add(pan);
+                    BoardAlgo boardAlgo = new BoardAlgo(new Player("1",false), new Player("2", true), "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
+                    boardAlgo.addAnimals();
+                    frame.add(boardAlgo);
+                    boardAlgo.actions(frame);
+
+                    frame.setVisible(true);
+
+
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(mediumButton);
+                    currentFrame.dispose();
 
                 }
                 if (button == hardButton) {
