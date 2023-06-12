@@ -11,6 +11,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
+
         JFrame frame = new JFrame("Xou DOU Qi");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(new Menu());

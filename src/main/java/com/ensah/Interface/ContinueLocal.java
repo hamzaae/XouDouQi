@@ -44,14 +44,12 @@ public class ContinueLocal extends JPanel{
         infoButton =createButton("/info.png",30, 410, 32, 32);
         exitButton =createButton("/exit.png",30, 450, 32, 32);
 
-        // Add buttons to the panel
         add(newButton);
         add(ContinueButton);
         add(homeButton);
         add(infoButton);
         add(exitButton);
 
-        // Set the preferred size of the panel to match the background image size
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
     }
 
