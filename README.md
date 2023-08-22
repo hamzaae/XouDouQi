@@ -12,3 +12,20 @@ Xou Dou Qi, also called "Dou Shou Qi" in Chinese, is a traditional strategic boa
 
 # Game Rules  
 <img width="375" alt="x2" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/94d1fdae-8444-47aa-81b2-254fb0ec76d5">
+
+
+  # Game Modes 
+##Single play: Challenge the AI at easy, medium, or hard levels.
+
+<img width="373" alt="x5" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/d4b91250-d62d-48fe-b4e4-9b8613a57a2a">
+
+
+#Local play: Play head-to-head on the same device.
+
+
+
+##Online  play: Play against human opponents on separate devices. 
+
+<img width="366" alt="x6" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/23497769-91d7-4800-b92a-2be7c3889d2a">
+
+Note: If you choose to join the game, you will need to enter the IP address of your machine.
