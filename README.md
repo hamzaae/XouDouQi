@@ -48,6 +48,15 @@ Note: If you choose to join the game, you will need to enter the IP address of y
  
  <img width="374" alt="x3" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/5316c1be-7d85-4ecf-a8f1-8d6d80a6fb66">
 
+
+ # Tools used
+
+- Board and interface design --------> Adobe Illustrator, Swing.
+
+- Controle of the game --------> Java
+  
+- Environment --------> Intellij IDEA
+
  # Tools used 
  • Board and interface design --------> Adobe Illustrator , Swing .
  • Controle of the game --------> Java 
@@ -55,8 +64,8 @@ Note: If you choose to join the game, you will need to enter the IP address of y
 
  ## Authors
 
-- [@hamzaae](https://github.com/hamzaae)
 - [@HananeNadi](https://github.com/HananeNadi)
+- [@hamzaae](https://github.com/hamzaae)
 
  
 
