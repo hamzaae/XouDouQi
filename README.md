@@ -15,7 +15,8 @@ Xou Dou Qi, also called "Dou Shou Qi" in Chinese, is a traditional strategic boa
 
 
   # Game Modes 
-##Single play: Challenge the AI at easy, medium, or hard levels.
+  # #Single Play 
+Challenge the AI at easy, medium, or hard levels.
 
 <img width="373" alt="x5" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/d4b91250-d62d-48fe-b4e4-9b8613a57a2a">
 
