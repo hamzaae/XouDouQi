@@ -120,8 +120,6 @@ public class ContinueLocal extends JPanel{
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
-                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(infoButton);
-                    currentFrame.dispose();
                 }
                 if (button == exitButton) {
                     System.exit(0);

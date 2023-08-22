@@ -5,18 +5,22 @@ import com.ensah.board.*;
 import com.ensah.network.ServerApp;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
 public class Winner extends JPanel {
     private BufferedImage background;
     public static ServerApp server;
+    public static Clip clip1;
+    public static Clip clip2;
 
     private final JButton homeButton,againButton,exitButton;
 
@@ -24,6 +28,34 @@ public class Winner extends JPanel {
     public Winner(String path) {
         loadBackgroundImage(path);
         setLayout(null);
+
+        //com.ensah.Interface.Menu.clip.stop();
+
+
+        //You won sound
+        try {
+            File file = new File("src\\main\\resources\\winning sound.wav");
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+            clip1 = AudioSystem.getClip();
+            clip1.open(audioInputStream);
+           // clip1.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+
+        //you failed sound
+        try {
+            File file = new File("src\\main\\resources\\faillure sound.wav");
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(file);
+            clip2 = AudioSystem.getClip();
+            clip2.open(audioInputStream);
+            //clip2.start();
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+
+
+
 
 
 
@@ -75,7 +107,10 @@ public class Winner extends JPanel {
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(homeButton);
+                    com.ensah.Interface.Menu.clip.stop();
                     currentFrame.dispose();
+                    com.ensah.Interface.Menu.clip.start();
+
                 }
                 if (button == againButton) {
                     if (BoardGui.read("frame_names.txt").equals("XOU DOU QI LOCAL")) {
@@ -86,6 +121,11 @@ public class Winner extends JPanel {
                         frame.add(boardLocal);
                         boardLocal.actions(frame);
                         frame.setVisible(true);
+                        JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
+                        currentFrame.dispose();
+
+
+
                     }
                     if (BoardGui.read("frame_names.txt").equals("XOU DOU QI EASY")) {
                         JFrame frame = new JFrame();
@@ -97,13 +137,16 @@ public class Winner extends JPanel {
                         frame.setVisible(true);
                         JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
                         currentFrame.dispose();
+
+
                     }
 
-                     if (BoardGui.read("frame_names.txt").equals("XOU DOU QI S")) {
+                    if (BoardGui.read("frame_names.txt").equals("XOU DOU QI S")) {
                         try {
-                                server = new ServerApp();
+                            server = new ServerApp();
                             JFrame frame = new JFrame();
                             Display dis=new Display(frame);
+
                             BoardServer boardServer = new BoardServer(new Player("1", true), new Player("2", false), frame, "src\\main\\java\\com\\ensah\\utils\\newBoard.txt");
                             boardServer.addAnimals();
                             frame.add(boardServer);
@@ -112,10 +155,11 @@ public class Winner extends JPanel {
                             JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(againButton);
                             currentFrame.dispose();
 
-                            } catch (Exception ex) {
-                                throw new RuntimeException(ex);
-                            }
-                         }
+
+                        } catch (Exception ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
                     if (BoardGui.read("frame_names.txt").equals("XOU DOU QI C")){
                         String ipAdresse=JOptionPane.showInputDialog("Please entrer the game's host IP  ");
                         JFrame frame = new JFrame();

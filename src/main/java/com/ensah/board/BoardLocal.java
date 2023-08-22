@@ -3,6 +3,7 @@ package com.ensah.board;
 import com.ensah.Interface.Winner;
 import com.ensah.animals.Animal;
 
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -97,6 +98,7 @@ public class BoardLocal extends BoardGui{
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+                            com.ensah.Interface.Winner.clip1.start();
                         }
                         else if (playerWin.equals(player2)){
                             JFrame winFrame = new JFrame("Xou DOU qi");
@@ -105,9 +107,11 @@ public class BoardLocal extends BoardGui{
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+                            com.ensah.Interface.Winner.clip1.start();
                         }
                         player1.setTurn(false);
                         player2.setTurn(false);
+                        com.ensah.Interface.Menu.clip.stop();
                         frame.dispose();
                         playerWin.setScore(playerWin.getScore()+1);
                     }

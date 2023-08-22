@@ -80,14 +80,13 @@ public class Reseau extends JPanel{
                         frame.add(boardServer);
                         boardServer.actions(frame);
                         frame.setVisible(true);
+                        JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(createButton);
+                        currentFrame.dispose();
 
                     } catch (Exception ex) {
                         throw new RuntimeException(ex);
                     }
 
-
-                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(createButton);
-                    currentFrame.dispose();
                 }
                 if (button == JoinButton) {
                     String ipAdresse=JOptionPane.showInputDialog("Please entrer the game's host IP  ");

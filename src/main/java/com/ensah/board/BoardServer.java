@@ -109,6 +109,7 @@ public class BoardServer extends BoardGui {
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+
                         } else if (playerWin.equals(player2)) {
                             JFrame winFrame = new JFrame("Xou DOU qi");
                             winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -119,6 +120,7 @@ public class BoardServer extends BoardGui {
                         }
                         player1.setTurn(false);
                         player2.setTurn(false);
+                        com.ensah.Interface.Menu.clip.stop();
                         frame.dispose();
                         playerWin.setScore(playerWin.getScore() + 1);
                     }

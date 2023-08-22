@@ -1,5 +1,6 @@
 package com.ensah.board;
 
+import com.ensah.Interface.Winner;
 import com.ensah.animals.Animal;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class BoardAlgo extends BoardGui{
+    private JFrame winFrame;
     public BoardAlgo(Player player1, Player player2, String file){
         super(player1, player2, file);
     }
@@ -89,9 +91,32 @@ public class BoardAlgo extends BoardGui{
                     // End game
                     playerWin = endGame();
                     if (playerWin != null) {
-                        // TODO
+                        if (playerWin.equals(player1)){
+                            System.out.println("player 1 win");
+                            winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/Ulost.png"));
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                            com.ensah.Interface.Winner.clip2.start();
+
+
+                        }
+                        else if (playerWin.equals(player2)){
+                            System.out.println("player 2 win");
+                            winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/Uwin.png"));
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                            com.ensah.Interface.Winner.clip1.start();
+                        }
                         player1.setTurn(false);
                         player2.setTurn(false);
+                        com.ensah.Interface.Menu.clip.stop();
+                        frame.dispose();
 
                         playerWin.setScore(playerWin.getScore()+1);
                     }
@@ -236,10 +261,6 @@ public class BoardAlgo extends BoardGui{
             currentAnimal.setPosition(position);
             updatedBoard.set(targetIndex, currentAnimal);
 
-            //System.out.println("Before: "+currentAnimal.getName()+currentAnimal.getPosition());
-
-            // Update the animal's position
-            //System.out.println("After: "+currentAnimal.getName()+currentAnimal.getPosition());
 
             while (updatedBoard.remove(null)) {
             }
@@ -288,27 +309,7 @@ public class BoardAlgo extends BoardGui{
             System.out.println("Board changes");
             while (bestMove.remove(null)) {
             }
-            //System.out.println(bestMove);
-            /*for (Animal animal:animals){
-                //assert bestMove!=null;
-                for (Animal newAnimal:bestMove){
-                    if (newAnimal!=null && newAnimal.getPosition() != animal.getPosition()){
-                        System.out.println("okkkkkkkkkk");
-                        animal.setPosition(newAnimal.getPosition());
-                        //System.out.println("BBBBBBBefore: " + animal.getName()+ animal.getPosition());
-                        System.out.println("newAnimal: "+ newAnimal.getName());
-                        System.out.println(newAnimal.getPosition().getI());
-                        System.out.println(newAnimal.getPosition().getJ());
-                        animal.getPosition().setY(newAnimal.getPosition().getJ());
-                        animal.getPosition().setX(newAnimal.getPosition().getI());
-                        System.out.println("animal: "+ animal.getName());
-                        System.out.println(animal.getPosition().getI());
-                        System.out.println(animal.getPosition().getJ());
-                        //System.out.println("AAAAAAAfter: " +  animal.getName()+ animal.getPosition());
 
-                    }
-                }
-            }*/
             for (Animal animal:animals){
                 for (Animal newAnimal:bestMove){
                     if (animal.getName().equals(newAnimal.getName()) && animal.getPlayer().getUsername().equals(newAnimal.getPlayer().getUsername())){

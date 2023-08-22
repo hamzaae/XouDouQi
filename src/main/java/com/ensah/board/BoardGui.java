@@ -17,6 +17,7 @@ public abstract class BoardGui extends JPanel {
     public static Player player1;
     public static Player player2;
     public Player playerWin;
+    public static boolean gameOver;
     static ArrayList<Position> possibleMoves = new ArrayList<>();
     static final int carree=64;
 
@@ -174,6 +175,9 @@ public abstract class BoardGui extends JPanel {
         }
         return null;
     }
+
+
+
 
     // Player's animals list only
     public static ArrayList<Animal> getAnimalsPlayer(Player player){
