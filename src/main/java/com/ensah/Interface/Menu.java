@@ -13,8 +13,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Menu extends JPanel {
-    private  Clip clip;
-    private boolean isPlaying,isClicked;
+    public static Clip clip;
+    static boolean isPlaying;
+    private static boolean isClicked;
     private BufferedImage background;
     private final JButton singleButton,localButton,onlineButton;
     private final JButton soundButton,infoButton,exitButton;
@@ -98,7 +99,7 @@ public class Menu extends JPanel {
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
-                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(singleButton);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(localButton);
                     currentFrame.dispose();
 
 
@@ -110,7 +111,7 @@ public class Menu extends JPanel {
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
-                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(localButton);
+                    JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(onlineButton);
                     currentFrame.dispose();
                 }
                 if (button == soundButton) {

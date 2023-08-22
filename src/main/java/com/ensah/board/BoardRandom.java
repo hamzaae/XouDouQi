@@ -104,6 +104,8 @@ public class BoardRandom extends BoardGui{
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+                            com.ensah.Interface.Winner.clip2.start();
+
 
                         }
                         else if (playerWin.equals(player2)){
@@ -113,11 +115,13 @@ public class BoardRandom extends BoardGui{
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+                            com.ensah.Interface.Winner.clip1.start();
                         }
 
 
                         player1.setTurn(false);
                         player2.setTurn(false);
+                        com.ensah.Interface.Menu.clip.stop();
                         frame.dispose();
 
                         playerWin.setScore(playerWin.getScore()+1);

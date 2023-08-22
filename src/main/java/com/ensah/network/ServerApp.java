@@ -14,7 +14,7 @@ public class ServerApp {
 	public static ObjectOutputStream out;
 	public static ObjectInputStream in;
 	private Scanner scanner;
-	private int port=5002;
+	private int port=5001;
 
 	public ServerApp() throws Exception {
 		serverSocket = new ServerSocket(port);

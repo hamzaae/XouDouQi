@@ -72,10 +72,7 @@ public class Modes extends JPanel {
                     boardRandom.addAnimals();
                     frame.add(boardRandom);
                     boardRandom.actions(frame);
-
                     frame.setVisible(true);
-
-
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(easyButton);
                     currentFrame.dispose();
 
@@ -107,6 +104,7 @@ public class Modes extends JPanel {
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
+                    com.ensah.Interface.Menu.clip.stop();
                 }
                 if (button == infoButton) {
                     JFrame frame = new JFrame("Game rules");
