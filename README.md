@@ -33,4 +33,27 @@ Play against human opponents on separate devices.
 Note: If you choose to join the game, you will need to enter the IP address of your machine.
 
 # Features 
-• 
+ • Play Human VS Human mode
+ • Play Human VS AI mode
+ • Restart game
+ • Save and load game
+ • Audio Control
+
+ # More Interfaces 
+ ## For the Winner 
+
+ ## For the Loser 
+ <img width="374" alt="x3" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/5316c1be-7d85-4ecf-a8f1-8d6d80a6fb66">
+
+ # Tools used 
+ • Board and interface design --------> Adobe Illustrator , Swing 
+ • Controle of the game --------> Java 
+ • Environment --------> Intellij IDEA
+
+ ## Authors
+
+- [@hamzaae]([https://github.com/hamzaae])
+- [@HananeNadi]([https://github.com/HananeNadi])
+
+ 
+
