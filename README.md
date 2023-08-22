@@ -41,19 +41,22 @@ Note: If you choose to join the game, you will need to enter the IP address of y
 
  # More Interfaces 
  ## For the Winner 
+ 
+  <img width="372" alt="x9" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/17daf1a9-3216-4410-9b82-7f031d74e3f1">
 
  ## For the Loser 
+ 
  <img width="374" alt="x3" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/5316c1be-7d85-4ecf-a8f1-8d6d80a6fb66">
 
  # Tools used 
- • Board and interface design --------> Adobe Illustrator , Swing 
+ • Board and interface design --------> Adobe Illustrator , Swing .
  • Controle of the game --------> Java 
  • Environment --------> Intellij IDEA
 
  ## Authors
 
-- [@hamzaae]([https://github.com/hamzaae])
-- [@HananeNadi]([https://github.com/HananeNadi])
+- [@hamzaae](https://github.com/hamzaae)
+- [@HananeNadi](https://github.com/HananeNadi)
 
  
 
