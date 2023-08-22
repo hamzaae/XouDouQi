@@ -31,3 +31,6 @@ Play against human opponents on separate devices.
 <img width="366" alt="x6" src="https://github.com/HananeNadi/XouDouQi/assets/127529925/23497769-91d7-4800-b92a-2be7c3889d2a">
 
 Note: If you choose to join the game, you will need to enter the IP address of your machine.
+
+# Features 
+⚫ 
