@@ -95,14 +95,6 @@ public class BoardClient extends BoardGui{
                                     break;
                                 }
                             }
-                            frame.repaint();
-                            // End game
-                            Player playerWin;
-                            playerWin = endGame();
-                            if (playerWin != null) {
-                                // TODO
-                                playerWin.setScore(playerWin.getScore() + 1);
-                            }
                             break;
 
                         }
@@ -124,21 +116,25 @@ public class BoardClient extends BoardGui{
                         if (playerWin.equals(player1)){
                             JFrame winFrame = new JFrame("Xou DOU qi");
                             winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            winFrame.getContentPane().add(new Winner("/Uwin.png"));
-                            winFrame.pack();
-                            winFrame.setLocationRelativeTo(null);
-                            winFrame.setVisible(true);
-
-                        }else if (playerWin.equals(player2)) {
-                            JFrame winFrame = new JFrame("Xou DOU qi");
-                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                             winFrame.getContentPane().add(new Winner("/Ulost.png"));
                             winFrame.pack();
                             winFrame.setLocationRelativeTo(null);
                             winFrame.setVisible(true);
+                            Winner.clip2.start();
+
+                        }else if (playerWin.equals(player2)) {
+                            JFrame winFrame = new JFrame("Xou DOU qi");
+                            winFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            winFrame.getContentPane().add(new Winner("/Uwin.png"));
+
+                            winFrame.pack();
+                            winFrame.setLocationRelativeTo(null);
+                            winFrame.setVisible(true);
+                            Winner.clip1.start();
                         }
                         player1.setTurn(false);
                         player2.setTurn(false);
+                        com.ensah.Interface.Menu.clip.stop();
                         frame.dispose();
                         playerWin.setScore(playerWin.getScore()+1);
                     }
@@ -282,4 +278,3 @@ public class BoardClient extends BoardGui{
 
 
 }
-

@@ -16,7 +16,7 @@ public class ClientProg {
 
 	// initialize socket and input output streams
 	private Socket socket = null;
-	private int port=5002;
+	private int port=5001;
 
 	private ObjectOutputStream out;
 

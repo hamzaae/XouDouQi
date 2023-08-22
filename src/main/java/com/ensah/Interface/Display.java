@@ -15,7 +15,7 @@ public class Display {
     private final JButton homeButton, saveButton, exitButton;
 
     public Display(JFrame frame) {
-        frame.setSize(460, 700);
+        frame.setSize(460, 655);
         frame.setResizable(false);
         JPanel pan = new JPanel();
         pan.setBounds(0, 575, 460, 200);
@@ -51,8 +51,10 @@ public class Display {
                     frame.pack();
                     frame.setLocationRelativeTo(null);
                     frame.setVisible(true);
+                    com.ensah.Interface.Menu.clip.stop();
                     JFrame currentFrame = (JFrame) SwingUtilities.getWindowAncestor(homeButton);
                     currentFrame.dispose();
+
                 }
                 if (button == saveButton) {
                     try {
