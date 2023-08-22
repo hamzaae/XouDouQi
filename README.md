@@ -32,12 +32,18 @@ Play against human opponents on separate devices.
 
 Note: If you choose to join the game, you will need to enter the IP address of your machine.
 
-# Features 
- • Play Human VS Human mode
- • Play Human VS AI mode
- • Restart game
- • Save and load game
- • Audio Control
+# Features
+
+- Play Human VS Human mode
+
+- Play Human VS AI mode
+
+- Restart game
+
+- Save and load game
+
+- Audio Control
+
 
  # More Interfaces 
  ## For the Winner 
