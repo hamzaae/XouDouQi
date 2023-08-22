@@ -57,10 +57,7 @@ Note: If you choose to join the game, you will need to enter the IP address of y
   
 - Environment --------> Intellij IDEA
 
- # Tools used 
- • Board and interface design --------> Adobe Illustrator , Swing .
- • Controle of the game --------> Java 
- • Environment --------> Intellij IDEA
+ 
 
  ## Authors
 
